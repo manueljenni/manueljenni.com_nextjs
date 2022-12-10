@@ -8,6 +8,11 @@
   --accent: blue;
 }
 
+::selection {
+  background-color: var(--main);
+  color: white;
+}
+
 .centerDiv {
   @apply flex justify-center items-center;
 }
