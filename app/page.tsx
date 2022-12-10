@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div className="w-full bg-slate-50 py-24">
       <div className="centerDiv h-full">
-        <div className="space-y-16">
+        <div className="space-y-16 w-2/3">
           <WelcomeText />
           <WelcomeBoxesSection />
           <RecentArticlesSection />

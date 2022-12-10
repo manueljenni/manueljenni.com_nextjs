@@ -7,8 +7,8 @@ export default function WelcomeBoxes() {
         <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
           <p>ABOUT ME</p>
         </div>
-        <div className="p-4">
-          <p>
+        <div className="centerDiv h-36 p-12">
+          <p className="text-xl">
             Who am I?
             <br />
             Get to know me here!
@@ -19,16 +19,16 @@ export default function WelcomeBoxes() {
         <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
           <p>ARTICLES</p>
         </div>
-        <div className="p-4">
-          <p>Writing is like exercising - just for the brain.</p>
+        <div className="centerDiv h-36 p-12">
+          <p className="text-xl">Writing is like exercising - just for the brain.</p>
         </div>
       </div>
       <div className="box">
         <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
           <p>HIRE ME!</p>
         </div>
-        <div className="p-4">
-          <p>I'm a software developer and content writer.</p>
+        <div className="centerDiv h-36 p-12">
+          <p className="text-xl">I'm a software developer and content writer.</p>
         </div>
       </div>
     </div>
