@@ -1,3 +1,11 @@
+.welcomeText {
+  background-image: linear-gradient(110deg, var(--main-dark) 0%, var(--main) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .container {
   padding: 0 2rem;
 }
