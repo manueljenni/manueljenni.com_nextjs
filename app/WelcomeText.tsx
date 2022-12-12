@@ -10,9 +10,9 @@ export default function WelcomeText() {
       <p className="text-xl">
         A developer, content writer and aspiring attorney.
         <br />
-        Check out some of my <span className="text-main">
+        Check out some of my <span className="accentText">
           thoughts & projects
-        </span> and <span className="text-main">travels</span>.
+        </span> and <span className="accentText">travels</span>.
       </p>
     </div>
   );

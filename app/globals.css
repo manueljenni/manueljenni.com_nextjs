@@ -6,6 +6,7 @@
   --main: #85c4d5;
   --main-dark: #4b8da0;
   --accent: blue;
+  @apply text-neutral-800;
 }
 
 ::selection {

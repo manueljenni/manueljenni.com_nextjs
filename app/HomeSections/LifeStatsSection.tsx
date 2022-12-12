@@ -1,5 +1,5 @@
 import React from "react";
-import LifeStats from "../LifeStats";
+import LifeStats from "../Components/LifeStats";
 
 export default function LifeStatsSection() {
   return (
