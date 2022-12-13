@@ -21,7 +21,7 @@ export default function LifeStats(props: any) {
     <div className="space-y-8">
       <div className="space-y-6">
         <p className="text-xl font-medium">Travel</p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
             <div className="space-y-1 text-center">
               <p className="text-lg">Next upcoming flight to</p>
