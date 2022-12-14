@@ -11,7 +11,6 @@ export default async function page() {
       <div className="centerDiv h-full">
         <div className="space-y-16 w-2/3">
           <WelcomeText />
-          {/* @ts-expect-error Server Component */}
           <WelcomeBoxesSection />
           {/* @ts-expect-error Server Component */}
           <RecentArticlesSection />
