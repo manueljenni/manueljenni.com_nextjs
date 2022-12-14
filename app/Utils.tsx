@@ -6,7 +6,7 @@ function convertSecondsToHours(seconds: number): number {
   return Math.round(seconds / 3600);
 }
 
-function getRemainingDays(dateInput: number): String {
+function getRemainingDaysAsText(dateInput: number): String {
   var date = new Date(dateInput);
   var today = new Date();
 
@@ -29,6 +29,6 @@ function percentageOfYear(days: number) {
 export default {
   formatMilesToKilometers,
   convertSecondsToHours,
-  getRemainingDays,
+  getRemainingDaysAsText,
   percentageOfYear,
 };

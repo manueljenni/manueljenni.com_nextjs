@@ -29,7 +29,7 @@ export default function LifeStats(props: any) {
                 {nextFlight.arrival.city} ({nextFlight.arrival.iata})
               </p>
               <p className="text-lg">
-                in {Utils.getRemainingDays(nextFlight.departureTime)}
+                {Utils.getRemainingDaysAsText(nextFlight.departureTime)}
               </p>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function LifeStats(props: any) {
           </div>
           <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
             <div className="space-y-1 text-center">
-              <p className="text-lg">In {lastYear}</p>
+              <p className="text-lg">In {lastYear}, spent</p>
               <p className="text-2xl font-medium">{daysSpentAbroad} days</p>
               <p className="text-lg">
                 abroad ({Utils.percentageOfYear(daysSpentAbroad)}%)
