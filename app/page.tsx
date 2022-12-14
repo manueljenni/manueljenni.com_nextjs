@@ -10,7 +10,6 @@ export default async function page() {
     <div className="w-full py-24">
       <div className="centerDiv h-full">
         <div className="space-y-16 w-2/3">
-          {/* @ts-expect-error Server Component */}
           <WelcomeText />
           {/* @ts-expect-error Server Component */}
           <WelcomeBoxesSection />
