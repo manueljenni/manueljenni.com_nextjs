@@ -19,7 +19,6 @@
 .body {
   max-width: 760px;
   width: 100%;
-  margin-top: 5em;
   padding: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +29,6 @@
     max-width: 1000px;
   }
 }
-
 
 .centerDiv {
   @apply flex justify-center items-center;
