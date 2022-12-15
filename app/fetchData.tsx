@@ -1,3 +1,6 @@
+// Bypass corporate proxy
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+
 async function fetchArticlesSummary() {
   const response = await fetch(
     "https://damp-atoll-27311.herokuapp.com/api/articles/getAllArticlesSummary"

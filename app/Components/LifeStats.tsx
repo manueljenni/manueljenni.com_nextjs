@@ -1,5 +1,6 @@
 import React from "react";
 import Utils from "../Utils";
+import BoxThree from "./BoxThree";
 
 export default function LifeStats(props: any) {
   var lifeStats = props.lifeStats;
@@ -22,70 +23,36 @@ export default function LifeStats(props: any) {
       <div className="space-y-6">
         <p className="text-xl font-medium">Travel</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">Next upcoming flight to</p>
-              <p className="text-2xl font-medium">
-                {nextFlight.arrival.city} ({nextFlight.arrival.iata})
-              </p>
-              <p className="text-lg">
-                {Utils.getRemainingDaysAsText(nextFlight.departureTime)}
-              </p>
-            </div>
-          </div>
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">This year</p>
-              <p className="text-2xl font-medium">
-                {currentFlightStats.flightsCount} flights
-              </p>
-              <p className="text-lg">taken</p>
-            </div>
-          </div>
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">This year</p>
-              <p className="text-2xl font-medium">
-                {Utils.formatMilesToKilometers(
-                  currentFlightStats.distance
-                ).toLocaleString()}{" "}
-                km
-              </p>
-              <p className="text-lg">
-                flown ({Utils.convertSecondsToHours(currentFlightStats.duration)} h)
-              </p>
-            </div>
-          </div>
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">In {lastYear}</p>
-              <p className="text-2xl font-medium">
-                {pastFlightStats.flightsCount} flights
-              </p>
-              <p className="text-lg">taken</p>
-            </div>
-          </div>
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">In {lastYear}</p>
-              <p className="text-2xl font-medium">
-                {Utils.formatMilesToKilometers(pastFlightStats.distance).toLocaleString()}{" "}
-                km
-              </p>
-              <p className="text-lg">
-                flown ({Utils.convertSecondsToHours(pastFlightStats.duration)} h)
-              </p>
-            </div>
-          </div>
-          <div className="centerDiv rounded-lg p-4 ring-1 ring-neutral-300">
-            <div className="space-y-1 text-center">
-              <p className="text-lg">In {lastYear}, spent</p>
-              <p className="text-2xl font-medium">{daysSpentAbroad} days</p>
-              <p className="text-lg">
-                abroad ({Utils.percentageOfYear(daysSpentAbroad)}%)
-              </p>
-            </div>
-          </div>
+          <BoxThree
+            top="Next upcoming flight to"
+            main={nextFlight.arrival.city + " (" + nextFlight.arrival.iata + ")"}
+            bottom={Utils.getRemainingDaysAsText(nextFlight.departureTime)}
+          />
+          <BoxThree
+            top="This year"
+            main={currentFlightStats.flightsCount + " flights"}
+            bottom="taken"
+          />
+          <BoxThree
+            top="This year"
+            main={Utils.formatMilesToKilometers(currentFlightStats.distance).toLocaleString() + " km"}
+            bottom="flown"
+          />
+          <BoxThree
+            top={"In " + lastYear}
+            main={Utils.formatMilesToKilometers(pastFlightStats.flightsCount).toLocaleString() + " flights"}
+            bottom="taken"
+          />
+          <BoxThree
+            top={"In " + lastYear}
+            main={Utils.formatMilesToKilometers(pastFlightStats.distance).toLocaleString() + " km"}
+            bottom="flown"
+          />
+          <BoxThree
+            top={"In " + lastYear + ", spent"}
+            main={daysSpentAbroad + " days"}
+            bottom={"abroad (" + Utils.percentageOfYear(daysSpentAbroad) + "%)"}
+          />
         </div>
       </div>
     </div>

@@ -25,5 +25,5 @@
 }
 
 .accentText {
-  @apply cursor-pointer text-main underline underline-offset-4;
+  @apply cursor-pointer text-main underline underline-offset-4 font-medium;
 }

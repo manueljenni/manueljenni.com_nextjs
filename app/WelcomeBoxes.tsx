@@ -1,34 +1,44 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBriefcase, faNewspaper, faUser } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function WelcomeBoxes() {
   return (
     <div className="grid grid-cols-3 gap-4">
-      <div className="box">
-        <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
-          <p>ABOUT ME</p>
+      <Link href={"/about"}>
+        <div className="box">
+          <div className="h-10 bg-main rounded-t-lg centerDiv">
+            <p className="text-xl uppercase">About me</p>
+          </div>
+          <div className="h-36 bg-white rounded-b-lg centerDiv">
+            <div className="p-8 space-y-4">
+              <p className="text-xl text-neutral-800">Who am I?<br />Get to know me here.</p>
+              <FontAwesomeIcon icon={faUser} className="text-2xl" />
+            </div>
+          </div>
         </div>
-        <div className="centerDiv h-36 p-12">
-          <p className="text-xl">
-            Who am I?
-            <br />
-            Get to know me here!
-          </p>
+      </Link>
+      <div className="box">
+        <div className="h-10 bg-main rounded-t-lg centerDiv">
+          <p className="text-xl uppercase">Articles</p>
+        </div>
+        <div className="h-36 bg-white rounded-b-lg centerDiv">
+          <div className="p-8 space-y-4">
+            <p className="text-xl text-neutral-800">Writing is like exercising - just for the brain.</p>
+            <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
+          </div>
         </div>
       </div>
       <div className="box">
-        <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
-          <p>ARTICLES</p>
+        <div className="h-10 bg-main rounded-t-lg centerDiv">
+          <p className="text-xl uppercase">Hire me!</p>
         </div>
-        <div className="centerDiv h-36 p-12">
-          <p className="text-xl">Writing is like exercising - just for the brain.</p>
-        </div>
-      </div>
-      <div className="box">
-        <div className="centerDiv h-10 rounded-t-lg bg-main text-lg font-medium">
-          <p>HIRE ME!</p>
-        </div>
-        <div className="centerDiv h-36 p-12">
-          <p className="text-xl">I'm a software developer and content writer.</p>
+        <div className="h-36 bg-white rounded-b-lg centerDiv">
+          <div className="p-8 space-y-4">
+            <p className="text-xl text-neutral-800">I'm a software developer and<br />content writer.</p>
+            <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
+          </div>
         </div>
       </div>
     </div>

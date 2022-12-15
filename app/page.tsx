@@ -5,6 +5,10 @@ import RecentArticlesSection from "./HomeSections/RecentArticlesSection";
 import LifeStatsSection from "./HomeSections/LifeStatsSection";
 import fetchData from "./fetchData";
 
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
 export default async function page() {
   return (
     <div className="w-full py-24">
