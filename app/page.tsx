@@ -11,15 +11,13 @@ config.autoAddCss = false
 
 export default async function page() {
   return (
-    <div className="body">
-      <div className="space-y-16">
-        <WelcomeText />
-        <WelcomeBoxesSection />
-        {/* @ts-expect-error Server Component */}
-        <RecentArticlesSection />
-        {/* @ts-expect-error Server Component */}
-        <LifeStatsSection />
-      </div>
+    <div className="space-y-16">
+      <WelcomeText />
+      <WelcomeBoxesSection />
+      {/* @ts-expect-error Server Component */}
+      <RecentArticlesSection />
+      {/* @ts-expect-error Server Component */}
+      <LifeStatsSection />
     </div>
   );
 }
