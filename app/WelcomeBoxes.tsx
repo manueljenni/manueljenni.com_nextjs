@@ -7,7 +7,7 @@ export default function WelcomeBoxes() {
   return (
     <div className="grid grid-cols-3 gap-4">
       <Link href={"/about"}>
-        <div className="box">
+        <div className="box hover">
           <div className="h-10 bg-main rounded-t-lg centerDiv">
             <p className="text-xl uppercase">About me</p>
           </div>
@@ -19,18 +19,20 @@ export default function WelcomeBoxes() {
           </div>
         </div>
       </Link>
-      <div className="box">
-        <div className="h-10 bg-main rounded-t-lg centerDiv">
-          <p className="text-xl uppercase">Articles</p>
-        </div>
-        <div className="h-36 bg-white rounded-b-lg centerDiv">
-          <div className="p-8 space-y-4">
-            <p className="text-xl text-neutral-800">Writing is like exercising - just for the brain.</p>
-            <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
+      <Link href="/articles">
+        <div className="box hover">
+          <div className="h-10 bg-main rounded-t-lg centerDiv">
+            <p className="text-xl uppercase">Articles</p>
+          </div>
+          <div className="h-36 bg-white rounded-b-lg centerDiv">
+            <div className="p-8 space-y-4">
+              <p className="text-xl text-neutral-800">Writing is like exercising - just for the brain.</p>
+              <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="box">
+      </Link>
+      <div className="box hover">
         <div className="h-10 bg-main rounded-t-lg centerDiv">
           <p className="text-xl uppercase">Hire me!</p>
         </div>

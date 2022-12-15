@@ -27,3 +27,23 @@
 .accentText {
   @apply cursor-pointer text-main underline underline-offset-4 font-medium;
 }
+
+.hover {
+  position: relative;
+  top: 0px;
+  transition: top ease 0.1s;
+}
+
+.hover:hover {
+  top: -3px;
+}
+
+.hover-right {
+  position: relative;
+  right: 0px;
+  transition: right ease 0.15s;
+}
+
+.hover-right:hover {
+  right: -5px;
+}

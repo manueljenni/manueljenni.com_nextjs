@@ -7,7 +7,7 @@ export default function RecentArticles(props: any) {
       {props.articles
         .slice(0, props.maxSize)
         .map((article: any) => {
-          return <div><ArticlePreview article={article} /></div>;
+          return <div key={article.id}><ArticlePreview article={article} /></div>;
         })}
     </div>
   );
