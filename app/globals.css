@@ -47,3 +47,7 @@
 .hover-right:hover {
   right: -5px;
 }
+
+.prose h1 {
+  margin-bottom: .5em;
+}

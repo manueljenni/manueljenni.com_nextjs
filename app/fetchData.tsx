@@ -9,6 +9,14 @@ async function fetchArticlesSummary() {
   return json;
 }
 
+async function getArticleById(id: number) {
+  const response = await fetch(
+    "https://damp-atoll-27311.herokuapp.com/api/articles/getArticleById?id=" + id
+  );
+  const json = await response.json();
+  return json;
+}
+
 async function fetchLifeStats() {
   const response = await fetch(
     "https://damp-atoll-27311.herokuapp.com/api/flights/getStats"
@@ -28,4 +36,4 @@ async function getUpcomingFlights() {
   return json;
 }
 
-export default { fetchArticlesSummary, fetchLifeStats, getUpcomingFlights };
+export default { fetchArticlesSummary, fetchLifeStats, getUpcomingFlights, getArticleById };
