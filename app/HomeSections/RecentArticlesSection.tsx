@@ -7,7 +7,7 @@ export default async function RecentArticlesSection(props: any) {
   return (
     <div className="space-y-8">
       <h1 className="text-3xl font-medium">Recent articles</h1>
-      <RecentArticles articles={articles} />
+      <RecentArticles articles={articles} maxSize={5} />
     </div>
   );
 }
