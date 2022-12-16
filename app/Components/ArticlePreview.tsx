@@ -19,7 +19,7 @@ export default function ArticlePreview(props: any) {
           <p className="text-xl">{article.summary}</p>
           <p className="accentText text-lg hover-right">Read more <span>→</span></p>
         </div>
-        <div className="hidden lg:visible w-1/6 text-right">
+        <div className="hidden lg:block w-1/6 text-right">
           <p className="text-lg uppercase articleCategory">{article.category}</p>
         </div>
       </div>
