@@ -19,7 +19,8 @@ async function getArticleById(id: number) {
 
 async function fetchLifeStats() {
   const response = await fetch(
-    "https://damp-atoll-27311.herokuapp.com/api/flights/getStats"
+    "https://damp-atoll-27311.herokuapp.com/api/flights/getStats",
+    { next: { revalidate: 60 } }
   );
   const json = await response.json();
   return json;
@@ -27,7 +28,8 @@ async function fetchLifeStats() {
 
 async function getUpcomingFlights() {
   const response = await fetch(
-    "https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights"
+    "https://damp-atoll-27311.herokuapp.com/api/flights/getAllUpcomingFlights",
+    { next: { revalidate: 60 } }
   );
   var json = await response.json();
   json = json.sort((a: any, b: any) => {
