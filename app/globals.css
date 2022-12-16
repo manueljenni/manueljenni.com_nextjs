@@ -18,10 +18,17 @@
 
 .body {
   max-width: 760px;
+  min-height: 95vh;
+  position: relative;
   width: 100%;
   padding: 1em;
   margin-left: auto;
   margin-right: auto;
+}
+
+footer {
+  width: 100%;
+  padding-bottom: .35em;
 }
 
 
