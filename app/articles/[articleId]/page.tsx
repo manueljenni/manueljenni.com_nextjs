@@ -4,6 +4,7 @@ import remarkHtml from 'remark-html';
 import path from 'path';
 import { promises as fs } from 'fs';
 import fetchData from '../../fetchData';
+import Link from 'next/link';
 
 export default async function page(props: any) {
     var article = await fetchData.getArticleById(props.params.articleId);
@@ -28,7 +29,8 @@ export default async function page(props: any) {
                 </div>
             </div>
             <article className="prose" dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+            <Link href={"/articles"}><p className='mb-4 accentText'>← All articles</p></Link >
+        </div >
     )
 }
 
