@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function WelcomeBoxes() {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <Link href={"/about"}>
         <div className="box hover">
           <div className="h-10 bg-main rounded-t-lg centerDiv">

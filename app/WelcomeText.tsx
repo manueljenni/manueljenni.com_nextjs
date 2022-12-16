@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 
 export default function WelcomeText() {
   return (
-    <div className="space-y-6 text-center">
+    <div className="space-y-6 text-center py-12">
       <h1 className="text-6xl font-semibold">
         Hi, I'm <span className={styles.welcomeText}>Manuel</span>.
       </h1>
