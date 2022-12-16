@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <header>
       <div className="flex justify-between">
-        <div>
-          <p className="text-2xl font-medium">Manuel Jenni</p>
+        <div className="header">
+          <Link href="/"><p className="text-2xl font-medium">Manuel Jenni</p></Link>
         </div>
-        <div className="flex space-x-8 justify-end text-lg">
+        <div className="flex space-x-8 justify-end text-lg header">
           <Link href={"/"}><p>Home</p></Link>
           <Link href={"/about"}><p>About</p></Link>
           <Link href={"/articles"}><p>Articles</p></Link>
