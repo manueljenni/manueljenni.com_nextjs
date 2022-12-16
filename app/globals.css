@@ -35,7 +35,7 @@
 }
 
 .box {
-  @apply rounded-lg bg-white text-center shadow;
+  @apply rounded-lg bg-white text-center shadow h-full;
 }
 
 .accentText {

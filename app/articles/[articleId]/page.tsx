@@ -7,12 +7,11 @@ import fetchData from '../../fetchData';
 
 export default async function page(props: any) {
     var article = await fetchData.getArticleById(props.params.articleId);
-    var contentMd = await getFile("test");
-    var html = await getMarkdownAsHtml(contentMd);
+    var html = await getMarkdownAsHtml("test");
     var tags = article.tags.split(',');
 
     return (
-        <div className="body">
+        <div>
             <div className='text-center centerDiv'>
                 <div className='space-y-6 mb-12'>
                     <div className='space-y-4'>
@@ -33,15 +32,13 @@ export default async function page(props: any) {
     )
 }
 
-async function getMarkdownAsHtml(content: string) {
+async function getMarkdownAsHtml(fileName: string) {
+    var filePath = path.join(process.cwd(), '/app/articles/md', fileName + '.md');
+    var content = await fs.readFile(filePath, 'utf8');
+
     const processedContent = await remark()
         .use(remarkHtml)
         .process(content);
 
     return processedContent.toString();
-}
-
-async function getFile(fileName: string) {
-    var filePath = path.join(process.cwd(), '/app/articles/md', fileName + '.md');
-    return await fs.readFile(filePath, 'utf8');
 }

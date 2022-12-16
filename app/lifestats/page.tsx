@@ -7,11 +7,9 @@ export default async function page() {
     var upcomingFlight = await fetchData.getUpcomingFlights();
 
     return (
-        <div className="body space-y-16">
-            <div className="space-y-8">
-                <h1 className="text-3xl font-medium">LifeStats</h1>
-                <LifeStats lifeStats={lifeStats} upcomingFlight={upcomingFlight[0]} />
-            </div>
+        <div className="space-y-8">
+            <h1 className="text-3xl font-medium">LifeStats</h1>
+            <LifeStats lifeStats={lifeStats} upcomingFlight={upcomingFlight[0]} />
         </div>
     );
 }

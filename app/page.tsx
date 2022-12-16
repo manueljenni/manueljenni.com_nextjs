@@ -3,7 +3,6 @@ import WelcomeText from "./WelcomeText";
 import WelcomeBoxesSection from "./HomeSections/WelcomeBoxesSection";
 import RecentArticlesSection from "./HomeSections/RecentArticlesSection";
 import LifeStatsSection from "./HomeSections/LifeStatsSection";
-import fetchData from "./fetchData";
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'

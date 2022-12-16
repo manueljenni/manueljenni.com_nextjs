@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="body">
+    <header>
       <div className="flex justify-between">
         <div>
           <p className="text-2xl font-medium">Manuel Jenni</p>
