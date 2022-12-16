@@ -42,3 +42,10 @@ async function getMarkdownAsHtml(fileName: string) {
 
     return processedContent.toString();
 }
+
+export const generateStaticParams = async () => {
+    var allArticles = await fetchData.fetchArticlesSummary();
+    return allArticles.map((article: any) => ({
+        articleId: article.id.toString(),
+    }));
+}
