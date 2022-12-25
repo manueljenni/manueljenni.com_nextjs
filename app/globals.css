@@ -46,6 +46,14 @@ footer {
   @apply rounded-lg bg-white text-center shadow h-full;
 }
 
+.boxComponent {
+  transition: box-shadow .2s ease;
+}
+
+.boxComponent:hover {
+  @apply ring-main;
+}
+
 .accentText {
   @apply cursor-pointer text-main underline underline-offset-4 font-medium;
 }
@@ -74,8 +82,11 @@ footer {
   transition: color ease .3s;
 }
 
-.header p:hover {
-  color: var(--main);
+/* Prevent sticky hover on mobile */
+@media (hover: hover) {
+  .header p:hover {
+    color: var(--main);
+  }
 }
 
 .prose h1 {
