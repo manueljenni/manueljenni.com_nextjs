@@ -1,7 +1,7 @@
 // Bypass corporate proxy
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
-//var baseUrl = "http://localhost:8080/api";
+//var baseUrl = "http://localhost:8080/api/";
 
 async function fetchArticlesSummary() {
   const response = await fetch(baseUrl + "/articles/getAllArticlesSummary");
@@ -28,10 +28,9 @@ async function getUpcomingFlights() {
     next: { revalidate: 60 },
   });
   var json = await response.json();
-  json = json.sort((a: any, b: any) => {
+  return json.sort((a: any, b: any) => {
     return a.departure.date - b.departure.date;
   });
-  return json;
 }
 
 export default {

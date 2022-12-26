@@ -47,11 +47,8 @@ footer {
 }
 
 .boxComponent {
+  cursor: default;
   transition: box-shadow .2s ease;
-}
-
-.boxComponent:hover {
-  @apply ring-main;
 }
 
 .accentText {
@@ -64,18 +61,10 @@ footer {
   transition: top ease 0.1s;
 }
 
-.hover:hover {
-  top: -3px;
-}
-
 .hover-right {
   position: relative;
   right: 0px;
   transition: right ease 0.15s;
-}
-
-.hover-right:hover {
-  right: -5px;
 }
 
 .header p {
@@ -84,8 +73,20 @@ footer {
 
 /* Prevent sticky hover on mobile */
 @media (hover: hover) {
+  .boxComponent:hover {
+    @apply ring-main;
+  }
+
   .header p:hover {
     color: var(--main);
+  }
+
+  .hover-right:hover {
+    right: -5px;
+  }
+
+  .hover:hover {
+    top: -3px;
   }
 }
 
