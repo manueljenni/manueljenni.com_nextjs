@@ -1,4 +1,5 @@
 import React from "react";
+import fs from 'fs';
 import ArticlePreview from "./Components/ArticlePreview";
 
 export default function RecentArticles(props: any) {
@@ -12,3 +13,19 @@ export default function RecentArticles(props: any) {
     </div>
   );
 }
+
+/*
+
+export async function getStaticProps() {
+  var articles = '';
+
+  const files = fs.readdirSync('/articles/md/');
+  console.log(files);
+  return {
+    props: {
+      articles,
+    },
+  }
+}
+
+*/
