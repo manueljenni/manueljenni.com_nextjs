@@ -8,7 +8,7 @@ export default function WelcomeText() {
         Hi, I'm <span className={styles.welcomeText}>Manuel</span>.
       </h1>
       <div className="text-xl space-y-2">
-        <p>A developer, content writer and aspiring attorney.</p>
+        <p>A consultant, developer and aspiring attorney.</p>
         <p>
           Check out some of my <span className="accentText">thoughts & projects</span> and{" "}
           <span className="accentText">travels</span>.
