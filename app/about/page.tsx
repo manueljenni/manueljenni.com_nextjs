@@ -33,6 +33,27 @@ export default function page() {
         </div>
       </div>
       <div className="space-y-4">
+        <h3 className="text-xl font-medium">Career</h3>
+        <div className="grid gap-4 md:grid-cols-2">
+          <BoxThree
+            top="SSD Consulting"
+            main="Consultant & Developer"
+            bottom="for various Europe-based clients"
+          />
+          <BoxThree
+            top="Flight tracking app"
+            main="Mileways"
+            bottom="Co-founder & Backend Developer"
+          />
+          <BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />
+          <BoxThree
+            top="ScriptySEO.com"
+            main="Content Writing Agency ✍️"
+            bottom="Founder & CEO"
+          />
+        </div>
+      </div>
+      <div className="space-y-4">
         <div className="space-y-2">
           <h3 className="text-xl font-medium">Full Stack Software Developer</h3>
           <p className="text-lg">
@@ -54,17 +75,6 @@ export default function page() {
         </div>
       </div>
       <div className="space-y-4">
-        <h3 className="text-xl font-medium">Other Work</h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          <BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />
-          <BoxThree
-            top="ScriptySEO.com"
-            main="Content Writing Agency ✍️"
-            bottom="Founder & CEO"
-          />
-        </div>
-      </div>
-      <div className="space-y-4">
         <h3 className="text-xl font-medium">Hobbies</h3>
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <BoxTwo main="Travel" bottom="✈️" />
@@ -75,6 +85,7 @@ export default function page() {
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Side Projects</h3>
+        <p className="text-lg">These are some projects I'm currently working on. Some are already functioning prototypes, and others are just ideas.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <SideProjects />
         </div>

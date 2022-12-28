@@ -10,7 +10,7 @@ export default function Header() {
             <p className="text-2xl font-medium">Manuel Jenni</p>
           </Link>
         </div>
-        <div className="flex justify-center space-x-8  text-lg header">
+        <div className="flex justify-between space-x-8 text-lg header">
           <Link href={"/"}>
             <p>Home</p>
           </Link>
