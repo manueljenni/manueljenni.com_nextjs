@@ -17,17 +17,13 @@ export default function page() {
           </p>
           <p>
             I'm also a passionate software developer - currently I'm working as a{" "}
-            <Link href="https://www.ssd-consulting.com" className="accentText">
-              software consultant
+            <Link href="https://www.ssd-consulting.com" className="accentText" target="_blank">
+              consultant and developer
             </Link>{" "}
-            for Europe-based companies. I've worked on things like{" "}
-            <Link href="https://www.mileways.com" className="accentText">
-              Mileways
-            </Link>
-            , an amazing flight tracking app.
+            for Europe-based companies.
           </p>
           <p>
-            I'm also studying law at university, and running my own content writing
+            I'm also studying law at university and running my own content writing
             agency.
           </p>
         </div>
@@ -40,11 +36,14 @@ export default function page() {
             main="Consultant & Developer"
             bottom="for various Europe-based clients"
           />
-          <BoxThree
-            top="Flight tracking app"
-            main="Mileways"
-            bottom="Co-founder & Backend Developer"
-          />
+          <Link href="https://www.mileways.com" target="_blank">
+            <BoxThree
+              top="Flight tracking app"
+              main="Mileways"
+              bottom="Co-founder & Backend Developer"
+              className="cursor-pointer"
+            />
+          </Link>
           <BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />
           <BoxThree
             top="ScriptySEO.com"
