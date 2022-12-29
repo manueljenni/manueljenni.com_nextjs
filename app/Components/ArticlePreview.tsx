@@ -9,7 +9,7 @@ export default function ArticlePreview(props: any) {
         <div className="hidden md:flex w-1/6 items-start">
           <div className="space-y-3 pr-8">
             <p className="text-lg">
-              {article.publicationDate == null ? new Date().toLocaleDateString() : article.publicationDate}
+              {article.publicationDate == null ? new Date().toLocaleDateString() : new Date(Date.parse(article.publicationDate)).toLocaleDateString()}
             </p>
             <p className="text-main">{article.category}</p>
           </div>

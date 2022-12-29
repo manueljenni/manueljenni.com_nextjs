@@ -25,7 +25,7 @@ function getMetaObjOfFile(fileName: string) {
     "link": fileName.replaceAll(".md", ""),
     "summary": data.summary,
     "category": data.category,
-    "publicationDate": null,
+    "publicationDate": data.publicationDate,
     "tags": data.tags,
     "content": content
   }
