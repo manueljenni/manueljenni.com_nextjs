@@ -28,4 +28,10 @@ And now comes a lot of text.
 
 And now comes a lot of text.
 
+<div class="articleImages">
+    <img src="/img/test.png" />    
+    <img src="/img/test.png" />    
+</div>
+
+
 ![Example image](/img/test.png?width=500&height=400)

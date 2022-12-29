@@ -1,8 +1,10 @@
 import React from "react";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
-import path from "path";
-import { promises as fs } from "fs";
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 import fetchData from "../../fetchData";
 import Link from "next/link";
 
@@ -39,7 +41,13 @@ export default async function page(props: any) {
 }
 
 async function getMarkdownAsHtml(content: string) {
-  return await (await remark().use(remarkHtml).process(content)).toString();
+  return await (await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true })
+    .process(content)).toString();
+
+  // return await (await remark().use(remarkHtml).process(content)).toString();
 }
 
 export const generateStaticParams = async () => {
