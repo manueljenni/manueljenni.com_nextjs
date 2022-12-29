@@ -7,7 +7,7 @@ var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
 //var baseUrl = "http://localhost:8080/api/";
 
 function fetchArticlesSummary() {
-  const files = fs.readdirSync(process.cwd() + "\\app\\articles\\md");
+  const files = fs.readdirSync(process.cwd() + "/app/articles/md");
   return files.map(file => getMetaObjOfFile(file));
 }
 
@@ -16,7 +16,7 @@ function getArticleByFileName(fileName: string) {
 }
 
 function getMetaObjOfFile(fileName: string) {
-  const file = fs.readFileSync(process.cwd() + `\\app\\articles\\md\\${fileName}`, 'utf-8');
+  const file = fs.readFileSync(process.cwd() + `/app/articles/md/${fileName}`, 'utf-8');
   const { data, content } = matter(file);
   return {
     "id": data.id,
