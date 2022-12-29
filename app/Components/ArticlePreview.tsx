@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ArticlePreview(props: any) {
   var article = props.article;
   return (
-    <Link href={"/articles/" + article.id}>
+    <Link href={"/articles/" + article.link}>
       <div className="flex md:space-x-4" key={article.id}>
         <div className="hidden md:flex w-1/6 items-start">
           <div className="space-y-3 pr-8">

@@ -7,8 +7,8 @@ import fetchData from "../../fetchData";
 import Link from "next/link";
 
 export default async function page(props: any) {
-  var article = await fetchData.getArticleById(props.params.articleId);
-  var html = await getMarkdownAsHtml("test");
+  var article = fetchData.getArticleByFileName(props.params.articleId + ".md");
+  var html = await getMarkdownAsHtml(article.content);
   var tags = article.tags.split(",");
 
   return (
@@ -38,16 +38,13 @@ export default async function page(props: any) {
   );
 }
 
-async function getMarkdownAsHtml(fileName: string) {
-  var filePath = path.join(process.cwd(), "/app/articles/md", fileName + ".md");
-  var content = await fs.readFile(filePath, "utf8");
-
+async function getMarkdownAsHtml(content: string) {
   return await (await remark().use(remarkHtml).process(content)).toString();
 }
 
 export const generateStaticParams = async () => {
   var allArticles = await fetchData.fetchArticlesSummary();
   return allArticles.map((article: any) => ({
-    articleId: article.id.toString(),
+    articleId: article.link.toString(),
   }));
 };

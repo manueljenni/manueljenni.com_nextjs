@@ -1,12 +1,34 @@
+import fs from 'fs';
+import matter from 'gray-matter';
+
 // Bypass corporate proxy
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
 //var baseUrl = "http://localhost:8080/api/";
 
-async function fetchArticlesSummary() {
-  const response = await fetch(baseUrl + "/articles/getAllArticlesSummary");
-  const json = await response.json();
-  return json;
+function fetchArticlesSummary() {
+  const files = fs.readdirSync("app\\articles\\md");
+  return files.map(file => getMetaObjOfFile(file));
+}
+
+function getArticleByFileName(fileName: string) {
+  return getMetaObjOfFile(fileName);
+}
+
+function getMetaObjOfFile(fileName: string) {
+  const file = fs.readFileSync(`app\\articles\\md\\${fileName}`, 'utf-8');
+  const { data, content } = matter(file);
+  return {
+    "id": data.id,
+    "title": data.title,
+    "subtitle": data.subtitle,
+    "link": fileName.replaceAll(".md", ""),
+    "summary": data.summary,
+    "category": data.category,
+    "publicationDate": null,
+    "tags": data.tags,
+    "content": content
+  }
 }
 
 async function getArticleById(id: number) {
@@ -38,4 +60,5 @@ export default {
   fetchLifeStats,
   getUpcomingFlights,
   getArticleById,
+  getArticleByFileName
 };
