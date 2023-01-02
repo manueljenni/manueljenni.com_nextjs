@@ -26,9 +26,24 @@ export default function LifeStats(props: any) {
         <div className="space-y-2">
           <p className="text-2xl font-medium">Travel</p>
           <div className="space-y-4">
-            <YearlyStats year={thisYear} distance={currentFlightStats.distance} flightsCount={currentFlightStats.flightsCount} daysAbroad={260} />
-            <YearlyStats year={lastYear} distance={pastFlightStats.distance} flightsCount={pastFlightStats.flightsCount} daysAbroad={94} />
-            <YearlyStats year={lastLastYear} distance={pastPastFlightStats.distance} flightsCount={pastPastFlightStats.flightsCount} daysAbroad={4} />
+            <YearlyStats
+              year={thisYear}
+              distance={currentFlightStats.distance}
+              flightsCount={currentFlightStats.flightsCount}
+              daysAbroad={260}
+            />
+            <YearlyStats
+              year={lastYear}
+              distance={pastFlightStats.distance}
+              flightsCount={pastFlightStats.flightsCount}
+              daysAbroad={94}
+            />
+            <YearlyStats
+              year={lastLastYear}
+              distance={pastPastFlightStats.distance}
+              flightsCount={pastPastFlightStats.flightsCount}
+              daysAbroad={4}
+            />
           </div>
         </div>
       </div>
@@ -48,11 +63,7 @@ function YearlyStats(props: any) {
         />
         <BoxThree
           top={"In " + props.year}
-          main={
-            Utils.formatMilesToKilometers(
-              props.distance
-            ).toLocaleString() + " km"
-          }
+          main={Utils.formatMilesToKilometers(props.distance).toLocaleString() + " km"}
           bottom="flown"
         />
         <BoxThree

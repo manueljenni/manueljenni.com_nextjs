@@ -1,5 +1,5 @@
-import fs from 'fs';
-import matter from 'gray-matter';
+import fs from "fs";
+import matter from "gray-matter";
 
 // Bypass corporate proxy
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
@@ -8,7 +8,7 @@ var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
 
 function fetchArticlesSummary() {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
-  return files.map(file => getMetaObjOfFile(file));
+  return files.map((file) => getMetaObjOfFile(file));
 }
 
 function getArticleByFileName(fileName: string) {
@@ -16,19 +16,19 @@ function getArticleByFileName(fileName: string) {
 }
 
 function getMetaObjOfFile(fileName: string) {
-  const file = fs.readFileSync(process.cwd() + `/app/articles/md/${fileName}`, 'utf-8');
+  const file = fs.readFileSync(process.cwd() + `/app/articles/md/${fileName}`, "utf-8");
   const { data, content } = matter(file);
   return {
-    "id": data.id,
-    "title": data.title,
-    "subtitle": data.subtitle,
-    "link": fileName.replaceAll(".md", ""),
-    "summary": data.summary,
-    "category": data.category,
-    "publicationDate": data.publicationDate,
-    "tags": data.tags,
-    "content": content
-  }
+    id: data.id,
+    title: data.title,
+    subtitle: data.subtitle,
+    link: fileName.replaceAll(".md", ""),
+    summary: data.summary,
+    category: data.category,
+    publicationDate: data.publicationDate,
+    tags: data.tags,
+    content: content,
+  };
 }
 
 async function getArticleById(id: number) {
@@ -60,5 +60,5 @@ export default {
   fetchLifeStats,
   getUpcomingFlights,
   getArticleById,
-  getArticleByFileName
+  getArticleByFileName,
 };

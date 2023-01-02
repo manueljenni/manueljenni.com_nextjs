@@ -1,8 +1,9 @@
 ---
 id: 1
-title: TestTitle
-subtitle: testSubtitle
-summary: testSummary
+title: Welcome, 2023!
+subtitle: Reflections about 2022 and 2023
+summary:
+  It's already 2023 - really! Here are some of my thoughts about the past and new year.
 tags: test,test,test
 category: featured
 link: test
