@@ -30,19 +30,19 @@ export default function LifeStats(props: any) {
               year={thisYear}
               distance={currentFlightStats.distance}
               flightsCount={currentFlightStats.flightsCount}
-              daysAbroad={260}
+              daysAbroad={2}
             />
             <YearlyStats
               year={lastYear}
               distance={pastFlightStats.distance}
               flightsCount={pastFlightStats.flightsCount}
-              daysAbroad={94}
+              daysAbroad={215}
             />
             <YearlyStats
               year={lastLastYear}
               distance={pastPastFlightStats.distance}
               flightsCount={pastPastFlightStats.flightsCount}
-              daysAbroad={4}
+              daysAbroad={94}
             />
           </div>
         </div>
