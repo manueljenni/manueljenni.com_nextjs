@@ -1,6 +1,7 @@
 import React from 'react'
 import FlightsTable from '../Components/FlightsTable'
 import fetchData from '../fetchData'
+import { headers } from 'next/headers';
 
 export default async function page() {
     var upcomingFlights = await fetchData.getUpcomingFlights();
@@ -10,6 +11,8 @@ export default async function page() {
     var pastThisYear = pastFlights.filter((flight: any) => new Date(flight.departureTime) > new Date(thisYear, 0, 1, 1));
     var flights2022 = pastFlights.filter((flight: any) => new Date(flight.departureTime) > new Date("2022-01-01") && new Date(flight.departureTime) < new Date("2023-01-01"));
     var flights2021 = pastFlights.filter((flight: any) => new Date(flight.departureTime) > new Date("2021-01-01") && new Date(flight.departureTime) < new Date("2022-01-01"));
+
+    const headersList = headers();
 
     return (
         <div className='space-y-8'>
