@@ -1,10 +1,10 @@
 import React from "react";
 import { remark } from "remark";
 import remarkHtml from "remark-html";
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 import fetchData from "../../fetchData";
 import Link from "next/link";
 
@@ -34,18 +34,20 @@ export default async function page(props: any) {
       </div>
       <article className="prose" dangerouslySetInnerHTML={{ __html: html }} />
       <Link href={"/articles"}>
-        <p className="my-12 accentText">← All articles</p>
+        <p className="mt-8 accentText">← All articles</p>
       </Link>
     </div>
   );
 }
 
 async function getMarkdownAsHtml(content: string) {
-  return await (await unified()
-    .use(remarkParse)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeStringify, { allowDangerousHtml: true })
-    .process(content)).toString();
+  return await (
+    await unified()
+      .use(remarkParse)
+      .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeStringify, { allowDangerousHtml: true })
+      .process(content)
+  ).toString();
 
   // return await (await remark().use(remarkHtml).process(content)).toString();
 }
