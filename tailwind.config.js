@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         main: "#85c4d5",
+        "main-light": "#aad6e2",
         accent: "#ed8936",
       },
     },

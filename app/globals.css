@@ -99,3 +99,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+.table-cell {
+  vertical-align: baseline;
+}

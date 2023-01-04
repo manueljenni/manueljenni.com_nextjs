@@ -1,9 +1,12 @@
 import React from "react";
+import fetchData from "../fetchData";
 import Utils from "../Utils";
 import BoxThree from "./BoxThree";
 import CurrentStats from "./CurrentStats";
+import FlightsTable from "./FlightsTable";
+import Link from "next/link";
 
-export default function LifeStats(props: any) {
+export default async function LifeStats(props: any) {
   var thisYear = new Date().getFullYear();
   var lastYear = thisYear - 1;
   var lastLastYear = thisYear - 2;
@@ -19,9 +22,13 @@ export default function LifeStats(props: any) {
     (obj: any) => obj.year == lastLastYear
   )[0];
 
+  const allUpcomingFlights = await fetchData.getUpcomingFlights();
+  var pastFlights = await fetchData.getPastFlights();
+  pastFlights = pastFlights.filter((flight: any) => new Date(flight.departureTime) >= new Date("2023-01-01") && new Date(flight.departureTime) <= new Date("2023-12-31"));
+
   return (
     <div className="space-y-8">
-      <div className="space-y-6">
+      <div className="space-y-8">
         <CurrentStats nextFlight={props.upcomingFlight} />
         <div className="space-y-2">
           <p className="text-2xl font-medium">Travel</p>
@@ -46,6 +53,19 @@ export default function LifeStats(props: any) {
             />
           </div>
         </div>
+        <div className="space-y-6">
+          <p className="text-2xl font-medium">Upcoming flights</p>
+          <div className="space-y-4">
+            <FlightsTable flights={allUpcomingFlights} />
+          </div>
+        </div>
+        <div className="space-y-6">
+          <p className="text-2xl font-medium">Past flights</p>
+          <div className="space-y-4">
+            <FlightsTable flights={pastFlights} />
+          </div>
+        </div>
+        <p className="text-lg accentText"><Link href="/flights">View all flights (2021 - 2023) →</Link></p>
       </div>
     </div>
   );

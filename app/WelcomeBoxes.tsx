@@ -32,17 +32,18 @@ export default function WelcomeBoxes() {
           </div>
         </div>
       </Link>
-      <div className="box hover">
-        <div className="h-10 bg-main rounded-t-lg centerDiv">
-          <p className="text-xl uppercase">Hire me!</p>
-        </div>
-        <div className=" bg-white rounded-b-lg centerDiv">
-          <div className="p-8 space-y-4">
-            <p className="text-xl text-neutral-800">I'm a software developer and content writer.</p>
-            <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
+      <Link href="/about">
+        <div className="box hover">
+          <div className="h-10 bg-main rounded-t-lg centerDiv">
+            <p className="text-xl uppercase">Hire me!</p>
           </div>
-        </div>
-      </div>
+          <div className=" bg-white rounded-b-lg centerDiv">
+            <div className="p-8 space-y-4">
+              <p className="text-xl text-neutral-800">I'm a software developer and content writer.</p>
+              <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
+            </div>
+          </div>
+        </div></Link>
     </div>
   );
 }

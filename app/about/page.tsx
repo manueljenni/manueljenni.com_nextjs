@@ -54,7 +54,7 @@ export default function page() {
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
-          <h3 className="text-xl font-medium">Full Stack Software Developer</h3>
+          <h3 id="hireme" className="text-xl font-medium">Full Stack Software Developer</h3>
           <p className="text-lg">
             I'm available for freelance projects -{" "}
             <span className="accentText">hire me!</span>
