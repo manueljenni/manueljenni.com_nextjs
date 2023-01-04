@@ -34,7 +34,7 @@ export default async function page(props: any) {
       </div>
       <article className="prose" dangerouslySetInnerHTML={{ __html: html }} />
       <Link href={"/articles"}>
-        <p className="mb-4 accentText">← All articles</p>
+        <p className="my-12 accentText">← All articles</p>
       </Link>
     </div>
   );

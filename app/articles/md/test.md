@@ -1,8 +1,8 @@
 ---
 id: 1
-title: TestTitle
-subtitle: testSubtitle
-summary: testSummary
+title: Test
+subtitle: Test
+summary: Just testing
 tags: test,test,test
 category: featured
 link: test
