@@ -18,7 +18,7 @@ export default async function page() {
         <div className='space-y-8'>
             <div className='space-y-4'>
                 <h1 className="text-3xl font-medium">Flights</h1>
-                <p className='text-lg'>I fly pretty regularly - these are the flights I've taken. Click them to see more information!</p>
+                <p className='text-lg'>I fly pretty regularly - these are the flights I've taken. Click to see more information!</p>
             </div>
             <div className="space-y-8">
                 <div className="space-y-4">
