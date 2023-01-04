@@ -5,7 +5,11 @@ import useWindowDimensions from '../WindowDimensions';
 
 export default function FlightsTable(props: any) {
     var flights = props.flights;
-    const { width } = useWindowDimensions();
+
+    const { width } = { width: 1000 };
+    if (typeof window != 'undefined') {
+        const { width } = useWindowDimensions();
+    }
 
     if (width > 1000) {
         return (
