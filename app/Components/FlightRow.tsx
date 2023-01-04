@@ -21,8 +21,8 @@ export default function FlightRow(props: any) {
     } else {
         return (
             <div key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata} className="table-row odd:bg-gray-200 hover:cursor-pointer" onClick={() => window.open(flight.milewaysUrl)}>
-                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap"><span className="text-gray-400 text-lg">{Utils.parseDate(flight.departureTime)}</span><br /><b>{flight.departure.city}</b> ({flight.departure.iata})<br /><span className="text-base text-gray-400">{Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
-                <div className="table-cell text-xl px-4 py-4 whitespace-nowrap"><span className="text-gray-400 text-lg">{Utils.parseDate(flight.arrivalTime)}</span><br /><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br /><span className="text-base text-gray-400">{Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{Utils.parseDate(flight.departureTime)}</span><br /><b>{flight.departure.city}</b> ({flight.departure.iata})<br /><span className="text-base text-gray-400">{Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
+                <div className="table-cell text-xl px-4 py-4"><span className="text-gray-400 text-lg">{Utils.parseDate(flight.arrivalTime)}</span><br /><b>{flight.arrival.city}</b> ({flight.arrival.iata})<br /><span className="text-base text-gray-400">{Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}</span></div>
             </div>
         )
     }
