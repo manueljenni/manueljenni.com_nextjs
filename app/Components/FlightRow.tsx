@@ -5,7 +5,10 @@ import Utils from '../Utils';
 
 export default function FlightRow(props: any) {
     var flight = props.flight;
-    const { width } = useWindowDimensions();
+    var { width } = { "width": 1200 };
+    if (typeof window != "undefined") {
+        var { width } = useWindowDimensions();
+    }
 
     if (width > 1000) {
         return (
