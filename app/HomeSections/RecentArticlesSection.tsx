@@ -1,7 +1,7 @@
 import React from "react";
 import RecentArticles from "../RecentArticles";
 import fetchData from "../fetchData";
-import fs from 'fs'
+import fs from "fs";
 
 export default async function RecentArticlesSection(props: any) {
   var articles = await fetchData.fetchArticlesSummary();
@@ -14,23 +14,24 @@ export default async function RecentArticlesSection(props: any) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('/articles/md/');
-  var articles = files.map(file => {
+  const files = fs.readdirSync("/articles/md/");
+  var articles = files.map((file) => {
     return {
-      "id": 1,
-      "title": "Kuala Lumpur: First Impression",
-      "subtitle": "Some intial thoughts after arriving in KL",
-      "link": file,
-      "summary": "I just arrived in Kuala Lumpur, Malaysia. Here's my first impression of the city.",
-      "category": "featured",
-      "publicationDate": null,
-      "image": "kuala-lumpur-merdeka118.jpg"
-    }
+      id: 1,
+      title: "Kuala Lumpur: First Impression",
+      subtitle: "Some intial thoughts after arriving in KL",
+      link: file,
+      summary:
+        "I just arrived in Kuala Lumpur, Malaysia. Here's my first impression of the city.",
+      category: "featured",
+      publicationDate: null,
+      image: "kuala-lumpur-merdeka118.jpg",
+    };
   });
 
   return {
     props: {
       articles,
     },
-  }
+  };
 }

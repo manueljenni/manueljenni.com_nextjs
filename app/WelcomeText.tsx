@@ -12,7 +12,10 @@ export default function WelcomeText() {
         <p>A consultant, developer and aspiring attorney.</p>
         <p>
           Check out some of my <span className="accentText">thoughts & projects</span> and{" "}
-          <Link href="/flights"><span className="accentText">travels</span></Link>.
+          <Link href="/flights">
+            <span className="accentText">travels</span>
+          </Link>
+          .
         </p>
       </div>
     </div>

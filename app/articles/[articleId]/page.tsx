@@ -1,6 +1,4 @@
 import React from "react";
-import { remark } from "remark";
-import remarkHtml from "remark-html";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";

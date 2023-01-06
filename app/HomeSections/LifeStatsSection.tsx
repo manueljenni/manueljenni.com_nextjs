@@ -10,9 +10,7 @@ export default async function LifeStatsSection() {
       <Link href="/lifestats">
         <h1 className="text-3xl font-medium">LifeStats</h1>
       </Link>
-      {upcomingFlight && (
-        <CurrentStats nextFlight={upcomingFlight[0]} />
-      )}
+      {upcomingFlight && <CurrentStats nextFlight={upcomingFlight[0]} />}
     </div>
   );
 }

@@ -13,7 +13,11 @@ export default function WelcomeBoxes() {
           </div>
           <div className=" bg-white rounded-b-lg centerDiv">
             <div className="p-8 space-y-4">
-              <p className="text-xl text-neutral-800">Who am I?<br />Get to know me here.</p>
+              <p className="text-xl text-neutral-800">
+                Who am I?
+                <br />
+                Get to know me here.
+              </p>
               <FontAwesomeIcon icon={faUser} className="text-2xl" />
             </div>
           </div>
@@ -26,7 +30,9 @@ export default function WelcomeBoxes() {
           </div>
           <div className=" bg-white rounded-b-lg">
             <div className="p-8 space-y-4">
-              <p className="text-xl text-neutral-800">Writing is like exercising - just for the brain.</p>
+              <p className="text-xl text-neutral-800">
+                Writing is like exercising - just for the brain.
+              </p>
               <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
             </div>
           </div>
@@ -39,11 +45,14 @@ export default function WelcomeBoxes() {
           </div>
           <div className=" bg-white rounded-b-lg centerDiv">
             <div className="p-8 space-y-4">
-              <p className="text-xl text-neutral-800">I'm a software developer and content writer.</p>
+              <p className="text-xl text-neutral-800">
+                I'm a software developer and content writer.
+              </p>
               <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
             </div>
           </div>
-        </div></Link>
+        </div>
+      </Link>
     </div>
   );
 }

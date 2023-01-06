@@ -17,14 +17,16 @@ export default function page() {
           </p>
           <p>
             I'm also a passionate software developer - currently I'm working as a{" "}
-            <Link href="https://www.ssd-consulting.com" className="accentText" target="_blank">
+            <Link
+              href="https://www.ssd-consulting.com"
+              className="accentText"
+              target="_blank">
               consultant and developer
             </Link>{" "}
             for Europe-based companies.
           </p>
           <p>
-            I'm also studying law at university and running my own content writing
-            agency.
+            I'm also studying law at university and running my own content writing agency.
           </p>
         </div>
       </div>
@@ -54,7 +56,9 @@ export default function page() {
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
-          <h3 id="hireme" className="text-xl font-medium">Full Stack Software Developer</h3>
+          <h3 id="hireme" className="text-xl font-medium">
+            Full Stack Software Developer
+          </h3>
           <p className="text-lg">
             I'm available for freelance projects -{" "}
             <span className="accentText">hire me!</span>
@@ -84,7 +88,10 @@ export default function page() {
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Side Projects</h3>
-        <p className="text-lg">These are some projects I'm currently working on. Some are already functioning prototypes, and others are just ideas.</p>
+        <p className="text-lg">
+          These are some projects I'm currently working on. Some are already functioning
+          prototypes, and others are just ideas.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <SideProjects />
         </div>

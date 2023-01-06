@@ -40,12 +40,23 @@ function getCurrentTimeEmoji(date: Date) {
 }
 
 function parseDate(input_date: string) {
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
   var date = new Date(input_date);
-  return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  return monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
 }
 
 function getDepartureArrivalTime(start_date: string, end_date: string) {
@@ -58,15 +69,22 @@ function getDepartureArrivalTime(start_date: string, end_date: string) {
   if (startDate < endDate) {
     // Overnight flight
     return (
-      <span>{getHoursOfDateFormatted(start)} - {getHoursOfDateFormatted(end)}<sup>+1</sup></span>
-    )
+      <span>
+        {getHoursOfDateFormatted(start)} - {getHoursOfDateFormatted(end)}
+        <sup>+1</sup>
+      </span>
+    );
   } else {
-    return getHoursOfDateFormatted(start) + ' - ' + getHoursOfDateFormatted(end);
+    return getHoursOfDateFormatted(start) + " - " + getHoursOfDateFormatted(end);
   }
 }
 
 function getHoursOfDateFormatted(date: Date) {
-  return date.getHours().toString().padStart(2, '0') + ':' + date.getMinutes().toString().padStart(2, '0');
+  return (
+    date.getHours().toString().padStart(2, "0") +
+    ":" +
+    date.getMinutes().toString().padStart(2, "0")
+  );
 }
 
 export default {
@@ -76,5 +94,5 @@ export default {
   percentageOfYear,
   getCurrentTimeEmoji,
   parseDate,
-  getDepartureArrivalTime
+  getDepartureArrivalTime,
 };
