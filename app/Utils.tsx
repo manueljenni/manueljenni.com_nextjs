@@ -11,7 +11,7 @@ function getRemainingDaysAsText(dateInput: number): String {
   var today = new Date();
 
   var diff = date.getTime() - today.getTime();
-  var diffInDays = Math.ceil(diff / (1000 * 3600 * 24));
+  var diffInDays = Math.round(diff / (1000 * 3600 * 24));
 
   if (diffInDays > 365) {
     return "in " + Math.round(diff / (1000 * 3600 * 24 * 365)) + " years";
