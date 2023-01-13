@@ -1,8 +1,26 @@
 "use client"
 import React from 'react'
-import MapboxMap, { Marker } from 'react-map-gl';
+import MapboxMap, { Marker, Source, Layer } from 'react-map-gl';
+const arc = require('arc');
 
 export default function Map(props: any) {
+
+    const upcomingRoutes: any = {
+        "type": "FeatureCollection",
+        "features": props.upcomingRoutes.map((route: any) => generateGreatCircleGeoJSON(
+            { x: route.departureLongitude, y: route.departureLatitude },
+            { x: route.arrivalLongitude, y: route.arrivalLatitude }
+        )),
+    };
+
+    const pastRoutes: any = {
+        "type": "FeatureCollection",
+        "features": props.pastRoutes.map((route: any) => generateGreatCircleGeoJSON(
+            { x: route.departureLongitude, y: route.departureLatitude },
+            { x: route.arrivalLongitude, y: route.arrivalLatitude }
+        )),
+    };
+
     return (
         <MapboxMap
             initialViewState={{
@@ -20,6 +38,41 @@ export default function Map(props: any) {
                     <Marker longitude={location.longitude} latitude={location.latitude} color='#85c4d5' />
                 )
             }
+            <Source type="geojson" data={pastRoutes} key="2">
+                <Layer
+                    id='lineLayer2'
+                    type='line'
+                    source='my-data'
+                    layout={{
+                        'line-join': 'round',
+                        'line-cap': 'round',
+                    }}
+                    paint={{
+                        'line-color': 'rgb(255, 255, 255)',
+                        'line-width': 4,
+                    }}
+                />
+            </Source>
+            <Source type="geojson" data={upcomingRoutes}>
+                <Layer
+                    id='lineLayer'
+                    type='line'
+                    source='my-data'
+                    layout={{
+                        'line-join': 'round',
+                        'line-cap': 'round',
+                    }}
+                    paint={{
+                        'line-color': 'rgb(84, 84, 84)',
+                        'line-width': 4,
+                    }}
+                />
+            </Source>
         </MapboxMap >
     )
+}
+
+function generateGreatCircleGeoJSON(start: any, end: any) {
+    let generator = new arc.GreatCircle(start, end, { 'name': "name" });
+    return generator.Arc(10, { offset: 20 }).json();
 }

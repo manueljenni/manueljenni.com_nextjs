@@ -72,6 +72,20 @@ async function getAllLocations() {
   return await response.json();
 }
 
+async function fetchAllUpcomingRoutes() {
+  const response = await fetch(baseUrl + "/flights/getUpcomingRoutes", {
+    next: { revalidate: 60000 },
+  });
+  return await response.json();
+}
+
+async function fetchAllPastRoutes() {
+  const response = await fetch(baseUrl + "/flights/getPastRoutes", {
+    next: { revalidate: 60000 },
+  });
+  return await response.json();
+}
+
 export default {
   fetchArticlesSummary,
   fetchLifeStats,
@@ -79,5 +93,7 @@ export default {
   getPastFlights,
   getArticleById,
   getArticleByFileName,
-  getAllLocations
+  getAllLocations,
+  fetchAllUpcomingRoutes,
+  fetchAllPastRoutes
 };
