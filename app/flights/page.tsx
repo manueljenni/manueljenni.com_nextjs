@@ -1,8 +1,10 @@
 import React from 'react'
 import FlightsTable from '../Components/FlightsTable'
 import fetchData from '../fetchData'
+import Map from '../Components/Map';
 
 export default async function page() {
+    const locations = await fetchData.getAllLocations();
     var upcomingFlights = await fetchData.getUpcomingFlights();
     var pastFlights = await fetchData.getPastFlights();
 
@@ -21,6 +23,9 @@ export default async function page() {
                 <div className="space-y-4">
                     <h3 className="text-xl font-medium">Upcoming</h3>
                     <FlightsTable flights={upcomingFlights} />
+                </div>
+                <div className='w-full rounded-lg border'>
+                    <Map locations={locations} />
                 </div>
                 <div className="space-y-4">
                     <h3 className="text-xl font-medium">{thisYear}</h3>

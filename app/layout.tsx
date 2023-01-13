@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

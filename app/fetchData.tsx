@@ -65,6 +65,13 @@ async function getPastFlights() {
   });
 }
 
+async function getAllLocations() {
+  const response = await fetch(baseUrl + "/places/getAllPlacesUnique", {
+    next: { revalidate: 60000 },
+  });
+  return await response.json();
+}
+
 export default {
   fetchArticlesSummary,
   fetchLifeStats,
@@ -72,4 +79,5 @@ export default {
   getPastFlights,
   getArticleById,
   getArticleByFileName,
+  getAllLocations
 };
