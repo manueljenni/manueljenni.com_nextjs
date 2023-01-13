@@ -1,6 +1,6 @@
 "use client"
-import React from 'react'
-import MapboxMap, { Marker, Source, Layer } from 'react-map-gl';
+import React, { useState } from 'react'
+import MapboxMap, { Marker, Source, Layer, Popup } from 'react-map-gl';
 const arc = require('arc');
 
 export default function Map(props: any) {
@@ -21,6 +21,7 @@ export default function Map(props: any) {
         )),
     };
 
+    const [popupInfo, setPopupInfo] = useState<any>(null);
     return (
         <MapboxMap
             initialViewState={{
@@ -35,9 +36,25 @@ export default function Map(props: any) {
         >
             {
                 props.locations.map((location: any) =>
-                    <Marker longitude={location.longitude} latitude={location.latitude} color='#85c4d5' />
+                    <Marker longitude={location.longitude} latitude={location.latitude} color='#85c4d5' onClick={e => { e.originalEvent.stopPropagation(); setPopupInfo(location); }} />
                 )
             }
+
+            {popupInfo && (
+                <Popup
+                    anchor="top"
+                    longitude={Number(popupInfo.longitude)}
+                    latitude={Number(popupInfo.latitude)}
+                    onClose={() => setPopupInfo(null)}
+                >
+                    <div className="text-center space-y-1">
+                        <p className='text-2xl font-medium'>{popupInfo.city} ({popupInfo.iata})</p>
+                        <p className='text-sm'>{popupInfo.countryName} ({popupInfo.countryCode})</p>
+                    </div>
+                    <img width="100%" src={popupInfo.image} />
+                </Popup>
+            )}
+
             <Source type="geojson" data={pastRoutes} key="2">
                 <Layer
                     id='lineLayer2'
