@@ -17,6 +17,8 @@ function getRemainingDaysAsText(dateInput: number): String {
     return "in " + Math.round(diff / (1000 * 3600 * 24 * 365)) + " years";
   } else if (diffInDays > 30) {
     return "in " + Math.round(diff / (1000 * 3600 * 24 * 30)) + " months";
+  } else if (diffInDays == 0) {
+    return "today";
   } else {
     return "in " + diffInDays.toString() + " days";
   }
