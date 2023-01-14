@@ -3,31 +3,43 @@ import BoxThree from "../Components/BoxThree";
 import BoxTwo from "../Components/BoxTwo";
 import SideProjects from "../SideProjects";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function page() {
   return (
     <div className="space-y-12">
       <div className="space-y-4">
-        <p className="text-3xl font-medium">About me</p>
-        <div className="space-y-4 text-lg">
-          <p>Hi, I'm Manuel. :)</p>
-          <p>
-            I'm 20 years old, originally from Switzerland and now travelling the world as
-            a digital nomad.
-          </p>
-          <p>
-            I'm also a passionate software developer - currently I'm working as a{" "}
-            <Link
-              href="https://www.ssd-consulting.com"
-              className="accentText"
-              target="_blank">
-              consultant and developer
-            </Link>{" "}
-            for Europe-based companies.
-          </p>
-          <p>
-            I'm also studying law at university and running my own content writing agency.
-          </p>
+        <div className="flex md:space-x-16">
+          <div className="space-y-4 text-lg md:w-2/3">
+            <p className="text-3xl font-medium">About me</p>
+            <p>Hi, I'm Manuel. :)</p>
+            <p>
+              I'm 20 years old, originally from Switzerland and now travelling the world
+              as a digital nomad.
+            </p>
+            <p>
+              I'm also a passionate software developer - currently I'm working as a{" "}
+              <Link
+                href="https://www.ssd-consulting.com"
+                className="accentText"
+                target="_blank">
+                consultant and developer
+              </Link>{" "}
+              for Europe-based companies.
+            </p>
+            <p>
+              I'm also studying law at university and running my own content writing
+              agency.
+            </p>
+          </div>
+          <div className="hidden md:block">
+            <Image
+              src={"/img/profile-ai.jpg"}
+              alt="Profile"
+              width={300}
+              height={300}
+              className="rounded-full"></Image>
+          </div>
         </div>
       </div>
       <div className="space-y-4">
