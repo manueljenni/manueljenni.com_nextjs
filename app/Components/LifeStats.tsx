@@ -54,7 +54,7 @@ export default function LifeStats(props: any) {
         <div className="space-y-6">
           <p className="text-2xl font-medium">Upcoming flights</p>
           <div className="space-y-4">
-            <FlightsTable flights={upcomingFlights} />
+            {upcomingFlights && <FlightsTable flights={upcomingFlights} />}
           </div>
         </div>
         <div className="space-y-6">
@@ -63,7 +63,9 @@ export default function LifeStats(props: any) {
             <FlightsTable flights={pastFlights} />
           </div>
         </div>
-        <p className="text-lg accentText"><Link href="/flights">View all flights (2021 - 2023) →</Link></p>
+        <p className="text-lg accentText">
+          <Link href="/flights">View all flights (2021 - 2023) →</Link>
+        </p>
       </div>
     </div>
   );

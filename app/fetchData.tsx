@@ -3,12 +3,15 @@ import matter from "gray-matter";
 
 // Bypass corporate proxy
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
-var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
-//var baseUrl = "http://localhost:8080/api/";
+
+//var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
+var baseUrl = "http://localhost:8080/api/";
 
 function fetchArticlesSummary() {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
-  return files.map((file) => getMetaObjOfFile(file));
+  return files
+    .filter((file) => file.includes(".md"))
+    .map((file) => getMetaObjOfFile(file));
 }
 
 function getArticleByFileName(fileName: string) {
@@ -50,9 +53,12 @@ async function getUpcomingFlights() {
     next: { revalidate: 60 },
   });
   var json = await response.json();
-  return json.sort((a: any, b: any) => {
-    return a.departure.date - b.departure.date;
-  });
+  if (json == "[]") {
+    return json.sort((a: any, b: any) => {
+      return a.departure.date - b.departure.date;
+    });
+  }
+  return json;
 }
 
 async function getPastFlights() {
@@ -60,9 +66,11 @@ async function getPastFlights() {
     next: { revalidate: 60 },
   });
   var json = await response.json();
-  return json.sort((a: any, b: any) => {
-    return a.departure.date - b.departure.date;
-  });
+  if (json == "[]") {
+    return json.sort((a: any, b: any) => {
+      return a.departure.date - b.departure.date;
+    });
+  }
 }
 
 async function getAllLocations() {
@@ -95,5 +103,5 @@ export default {
   getArticleByFileName,
   getAllLocations,
   fetchAllUpcomingRoutes,
-  fetchAllPastRoutes
+  fetchAllPastRoutes,
 };
