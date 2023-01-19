@@ -53,11 +53,9 @@ async function getUpcomingFlights() {
     next: { revalidate: 60 },
   });
   var json = await response.json();
-  if (json == "[]") {
-    return json.sort((a: any, b: any) => {
-      return a.departure.date - b.departure.date;
-    });
-  }
+  return json.sort((a: any, b: any) => {
+    return a.departure.date - b.departure.date;
+  });
   return json;
 }
 
@@ -66,11 +64,9 @@ async function getPastFlights() {
     next: { revalidate: 60 },
   });
   var json = await response.json();
-  if (json == "[]") {
-    return json.sort((a: any, b: any) => {
-      return a.departure.date - b.departure.date;
-    });
-  }
+  return json.sort((a: any, b: any) => {
+    return a.departure.date - b.departure.date;
+  });
 }
 
 async function getAllLocations() {
