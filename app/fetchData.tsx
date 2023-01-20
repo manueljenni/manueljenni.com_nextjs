@@ -90,6 +90,11 @@ async function fetchAllPastRoutes() {
   return await response.json();
 }
 
+async function fetchNomadList() {
+  const response = await fetch("https://nomadlist.com/@manueljenni.json");
+  return await response.json();
+}
+
 export default {
   fetchArticlesSummary,
   fetchLifeStats,
@@ -100,4 +105,5 @@ export default {
   getAllLocations,
   fetchAllUpcomingRoutes,
   fetchAllPastRoutes,
+  fetchNomadList
 };

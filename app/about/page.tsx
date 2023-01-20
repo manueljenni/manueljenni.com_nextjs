@@ -45,17 +45,18 @@ export default function page() {
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
         <div className="grid gap-4 md:grid-cols-2">
-          <BoxThree
-            top="SSD Consulting"
-            main="Consultant & Developer"
-            bottom="for various Europe-based clients"
-          />
-          <Link href="https://www.mileways.com" target="_blank">
+          <Link href="https://ssd-consulting.de/" target="_blank" className="pointer-important">
+            <BoxThree
+              top="SSD Consulting"
+              main="Consultant & Developer"
+              bottom="for various Europe-based clients"
+            />
+          </Link>
+          <Link href="https://www.mileways.com" target="_blank" className="pointer-important">
             <BoxThree
               top="Flight tracking app"
               main="Mileways"
               bottom="Co-founder & Backend Developer"
-              className="cursor-pointer"
             />
           </Link>
           <BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />

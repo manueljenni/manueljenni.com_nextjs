@@ -27,7 +27,7 @@ export default function LifeStats(props: any) {
   return (
     <div className="space-y-8">
       <div className="space-y-8">
-        <CurrentStats nextFlight={upcomingFlights[0]} />
+        <CurrentStats nextFlight={upcomingFlights[0]} currentLocation={props.currentLocation} />
         <div className="space-y-2">
           <p className="text-2xl font-medium">Travel</p>
           <div className="space-y-4">

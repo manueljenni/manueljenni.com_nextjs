@@ -4,6 +4,7 @@ import Utils from "../Utils";
 
 export default function CurrentStats(props: any) {
   const nextFlight = props.nextFlight;
+  const currentLocation = props.currentLocation;
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -11,8 +12,8 @@ export default function CurrentStats(props: any) {
         <>
           <BoxThree
             top="Manuel is currently in"
-            main={nextFlight.departure.city}
-            bottom={nextFlight.departure.countryName}
+            main={currentLocation.city}
+            bottom={currentLocation.country}
           />
           <BoxThree
             top="Next upcoming flight to"
@@ -26,7 +27,7 @@ export default function CurrentStats(props: any) {
               " " +
               Utils.getCurrentTimeEmoji(new Date())
             }
-            bottom={"in " + nextFlight.departure.city}
+            bottom={"in " + currentLocation.city}
           />
         </>
       )}

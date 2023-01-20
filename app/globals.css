@@ -51,6 +51,10 @@ footer {
   transition: box-shadow .2s ease;
 }
 
+.pointer-important>.boxComponent {
+  cursor: pointer;
+}
+
 .accentText {
   @apply cursor-pointer text-main underline underline-offset-4 font-medium;
 }

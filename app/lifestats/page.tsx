@@ -6,6 +6,7 @@ export default async function page() {
   var lifeStats = await fetchData.fetchLifeStats();
   var allUpcomingFlights = await fetchData.getUpcomingFlights();
   var pastFlights = await fetchData.getPastFlights();
+  const nomadList = await fetchData.fetchNomadList();
   pastFlights = pastFlights.filter(
     (flight: any) =>
       new Date(flight.departureTime) >= new Date("2023-01-01") &&
@@ -19,6 +20,7 @@ export default async function page() {
         lifeStats={lifeStats}
         upcomingFlights={allUpcomingFlights}
         pastFlights={pastFlights}
+        currentLocation={nomadList.location.now}
       />
     </div>
   );
