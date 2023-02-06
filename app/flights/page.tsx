@@ -35,10 +35,12 @@ export default async function page() {
         </p>
       </div>
       <div className="space-y-8">
-        <div className="space-y-4">
-          <h3 className="text-xl font-medium">Upcoming</h3>
-          <FlightsTable flights={upcomingFlights} />
-        </div>
+        {upcomingFlights.length > 0 && (
+          <div className="space-y-4">
+            <h3 className="text-xl font-medium">Upcoming</h3>
+            <FlightsTable flights={upcomingFlights} />
+          </div>
+        )}
         <div className="w-full rounded-lg border">
           <Map
             locations={locations}

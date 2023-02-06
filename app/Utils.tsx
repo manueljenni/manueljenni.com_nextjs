@@ -24,6 +24,24 @@ function getRemainingDaysAsText(dateInput: number): String {
   }
 }
 
+function getPastDaysAsText(dateInput: number): String {
+  var date = new Date(dateInput);
+  var today = new Date();
+
+  var diff = Math.abs(date.getTime() - today.getTime());
+  var diffInDays = Math.round(diff / (1000 * 3600 * 24));
+
+  if (diffInDays > 365) {
+    return Math.round(diff / (1000 * 3600 * 24 * 365)) + " years ago";
+  } else if (diffInDays > 30) {
+    return Math.round(diff / (1000 * 3600 * 24 * 30)) + " months ago";
+  } else if (diffInDays == 0) {
+    return "today";
+  } else {
+    return diffInDays.toString() + " days ago";
+  }
+}
+
 function percentageOfYear(days: number) {
   return Math.round((days / 365) * 100);
 }
@@ -93,6 +111,7 @@ export default {
   formatMilesToKilometers,
   convertSecondsToHours,
   getRemainingDaysAsText,
+  getPastDaysAsText,
   percentageOfYear,
   getCurrentTimeEmoji,
   parseDate,

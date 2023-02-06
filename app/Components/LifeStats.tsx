@@ -27,7 +27,11 @@ export default function LifeStats(props: any) {
   return (
     <div className="space-y-8">
       <div className="space-y-8">
-        <CurrentStats nextFlight={upcomingFlights[0]} currentLocation={props.currentLocation} />
+        <CurrentStats
+          nextFlight={upcomingFlights[0]}
+          pastFlight={pastFlights[0]}
+          currentLocation={props.currentLocation}
+        />
         <div className="space-y-2">
           <p className="text-2xl font-medium">Travel</p>
           <div className="space-y-4">
@@ -51,12 +55,14 @@ export default function LifeStats(props: any) {
             />
           </div>
         </div>
-        <div className="space-y-6">
-          <p className="text-2xl font-medium">Upcoming flights</p>
-          <div className="space-y-4">
-            {upcomingFlights && <FlightsTable flights={upcomingFlights} />}
+        {upcomingFlights.length > 0 && (
+          <div className="space-y-6">
+            <p className="text-2xl font-medium">Upcoming flights</p>
+            <div className="space-y-4">
+              <FlightsTable flights={upcomingFlights} />
+            </div>
           </div>
-        </div>
+        )}
         <div className="space-y-6">
           <p className="text-2xl font-medium">Past flights</p>
           <div className="space-y-4">
