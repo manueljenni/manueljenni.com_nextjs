@@ -2,6 +2,7 @@ import React from "react";
 import BoxThree from "../Components/BoxThree";
 import BoxTwo from "../Components/BoxTwo";
 import SideProjects from "../SideProjects";
+import Utils from "../Utils";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,8 +15,8 @@ export default function page() {
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
             <p>
-              I'm 20 years old, originally from Switzerland and now travelling the world
-              as a digital nomad.
+              I'm {Utils.getAge()} years old, originally from Switzerland and now
+              travelling the world as a digital nomad.
             </p>
             <p>
               I'm also a passionate software developer - currently I'm working as a{" "}
@@ -45,14 +46,20 @@ export default function page() {
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
         <div className="grid gap-4 md:grid-cols-2">
-          <Link href="https://ssd-consulting.de/" target="_blank" className="pointer-important">
+          <Link
+            href="https://ssd-consulting.de/"
+            target="_blank"
+            className="pointer-important">
             <BoxThree
               top="SSD Consulting"
               main="Consultant & Developer"
               bottom="for various Europe-based clients"
             />
           </Link>
-          <Link href="https://www.mileways.com" target="_blank" className="pointer-important">
+          <Link
+            href="https://www.mileways.com"
+            target="_blank"
+            className="pointer-important">
             <BoxThree
               top="Flight tracking app"
               main="Mileways"

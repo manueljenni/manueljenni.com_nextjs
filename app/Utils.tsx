@@ -126,5 +126,5 @@ export default {
   getCurrentTimeEmoji,
   parseDate,
   getDepartureArrivalTime,
-  getBirthYear: getAge,
+  getAge,
 };
