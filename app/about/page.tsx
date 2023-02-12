@@ -21,7 +21,7 @@ export default function page() {
             <p>
               I'm also a passionate software developer - currently I'm working as a{" "}
               <Link
-                href="https://www.ssd-consulting.com"
+                href="https://www.ssd-consulting.de"
                 className="accentText"
                 target="_blank">
                 consultant and developer
