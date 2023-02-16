@@ -14,10 +14,10 @@ export default function page() {
           <div className="space-y-4 text-lg md:w-2/3">
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
+            <p>I'm {Utils.getAge()} years and I'm currently living in London.</p>
             <p>
-              I'm {Utils.getAge()} years and I'm currently living in London. Originally
-              I'm from Switzerland, but for the last two years, I've been travelling the
-              world as a digital nomad.
+              Originally I'm from Switzerland, but for the last two years, I've been
+              travelling the world as a digital nomad.
             </p>
             <p>
               I'm also a passionate software developer - currently I'm working as a{" "}
