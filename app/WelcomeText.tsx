@@ -11,7 +11,15 @@ export default function WelcomeText() {
       <div className="text-xl space-y-2">
         <p>A consultant, developer and aspiring attorney.</p>
         <p>
-          Check out some of my <span className="accentText">thoughts & projects</span> and{" "}
+          Check out some of my{" "}
+          <Link href="/articles">
+            <span className="accentText">thoughts</span>
+          </Link>
+          ,{" "}
+          <Link href="/projects">
+            <span className="accentText">projects</span>
+          </Link>{" "}
+          and{" "}
           <Link href="/flights">
             <span className="accentText">travels</span>
           </Link>
