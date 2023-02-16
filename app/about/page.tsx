@@ -15,8 +15,9 @@ export default function page() {
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
             <p>
-              I'm {Utils.getAge()} years old, originally from Switzerland and now
-              travelling the world as a digital nomad.
+              I'm {Utils.getAge()} years and I'm currently living in London. Originally
+              I'm from Switzerland, but for the last two years, I've been travelling the
+              world as a digital nomad.
             </p>
             <p>
               I'm also a passionate software developer - currently I'm working as a{" "}
