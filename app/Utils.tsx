@@ -107,7 +107,7 @@ function getHoursOfDateFormatted(date: Date) {
   );
 }
 
-function getAge() {
+function getAge(): number {
   const date = new Date("2002-10-08");
   var now = new Date();
   var current_year = now.getFullYear();
@@ -115,6 +115,15 @@ function getAge() {
   var birthday_this_year = new Date(current_year, date.getMonth(), date.getDate());
   var has_had_birthday_this_year = now >= birthday_this_year;
   return has_had_birthday_this_year ? year_diff : year_diff - 1;
+}
+
+function getDaysOfCurrentYear(): number {
+  return (
+    Math.floor(
+      (new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
+        (1000 * 60 * 60 * 24)
+    ) + 1
+  );
 }
 
 export default {
@@ -127,4 +136,5 @@ export default {
   parseDate,
   getDepartureArrivalTime,
   getAge,
+  getDaysOfCurrentYear,
 };
