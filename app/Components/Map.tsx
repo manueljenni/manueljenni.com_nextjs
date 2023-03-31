@@ -8,8 +8,8 @@ export default function Map(props: any) {
     type: "FeatureCollection",
     features: props.upcomingRoutes.map((route: any) =>
       generateGreatCircleGeoJSON(
-        { x: route.departureLongitude, y: route.departureLatitude },
-        { x: route.arrivalLongitude, y: route.arrivalLatitude }
+        { x: route[0].longitude, y: route[0].latitude },
+        { x: route[1].longitude, y: route[1].latitude }
       )
     ),
   };
@@ -18,8 +18,8 @@ export default function Map(props: any) {
     type: "FeatureCollection",
     features: props.pastRoutes.map((route: any) =>
       generateGreatCircleGeoJSON(
-        { x: route.departureLongitude, y: route.departureLatitude },
-        { x: route.arrivalLongitude, y: route.arrivalLatitude }
+        { x: route[0].longitude, y: route[0].latitude },
+        { x: route[1].longitude, y: route[1].latitude }
       )
     ),
   };

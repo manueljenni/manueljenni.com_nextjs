@@ -2,10 +2,10 @@ import fs from "fs";
 import matter from "gray-matter";
 
 // Bypass corporate proxy
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
+// process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
-var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
-//var baseUrl = "http://localhost:8080/api/";
+// var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
+var baseUrl = "https://web-api-nest.herokuapp.com/api";
 
 function fetchArticlesSummary() {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
@@ -41,7 +41,7 @@ async function getArticleById(id: number) {
 }
 
 async function fetchLifeStats() {
-  const response = await fetch(baseUrl + "/flights/getStats", {
+  const response = await fetch(baseUrl + "/stats/statsByYear", {
     next: { revalidate: 60 },
   });
   const json = await response.json();
@@ -49,7 +49,7 @@ async function fetchLifeStats() {
 }
 
 async function getUpcomingFlights() {
-  const response = await fetch(baseUrl + "/flights/getAllUpcomingFlights", {
+  const response = await fetch(baseUrl + "/flights/allFlights/upcoming", {
     next: { revalidate: 60 },
   });
   var json = await response.json();
@@ -60,7 +60,7 @@ async function getUpcomingFlights() {
 }
 
 async function getPastFlights() {
-  const response = await fetch(baseUrl + "/flights/getAllPastFlights", {
+  const response = await fetch(baseUrl + "/flights/allFlights/past", {
     next: { revalidate: 60 },
   });
   var json = await response.json();
@@ -70,21 +70,21 @@ async function getPastFlights() {
 }
 
 async function getAllLocations() {
-  const response = await fetch(baseUrl + "/places/getAllPlacesUnique", {
+  const response = await fetch(baseUrl + "/airport", {
     next: { revalidate: 60000 },
   });
   return await response.json();
 }
 
 async function fetchAllUpcomingRoutes() {
-  const response = await fetch(baseUrl + "/flights/getUpcomingRoutes", {
+  const response = await fetch(baseUrl + "/routes/upcoming", {
     next: { revalidate: 60000 },
   });
   return await response.json();
 }
 
 async function fetchAllPastRoutes() {
-  const response = await fetch(baseUrl + "/flights/getPastRoutes", {
+  const response = await fetch(baseUrl + "/routes/past", {
     next: { revalidate: 60000 },
   });
   return await response.json();
@@ -105,5 +105,5 @@ export default {
   getAllLocations,
   fetchAllUpcomingRoutes,
   fetchAllPastRoutes,
-  fetchNomadList
+  fetchNomadList,
 };

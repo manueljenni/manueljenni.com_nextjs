@@ -11,14 +11,14 @@ export default function LifeStats(props: any) {
   var lastLastYear = thisYear - 2;
 
   var lifeStats = props.lifeStats;
-  var currentFlightStats = lifeStats.statsByYear.filter(
-    (obj: any) => obj.year == thisYear
+  var currentFlightStats = lifeStats.filter(
+    (obj: any) => new Date(obj.year).getFullYear() == thisYear
   )[0];
-  var pastFlightStats = lifeStats.statsByYear.filter(
-    (obj: any) => obj.year == lastYear
+  var pastFlightStats = lifeStats.filter(
+    (obj: any) => new Date(obj.year).getFullYear() == lastYear
   )[0];
-  var pastPastFlightStats = lifeStats.statsByYear.filter(
-    (obj: any) => obj.year == lastLastYear
+  var pastPastFlightStats = lifeStats.filter(
+    (obj: any) => new Date(obj.year).getFullYear() == lastLastYear
   )[0];
 
   const upcomingFlights = props.upcomingFlights;
