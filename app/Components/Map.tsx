@@ -40,12 +40,12 @@ export default function Map(props: any) {
         <Marker
           longitude={location.longitude}
           latitude={location.latitude}
-          color="#85c4d5"
           onClick={(e) => {
             e.originalEvent.stopPropagation();
             setPopupInfo(location);
-          }}
-        />
+          }}>
+          <img src="/svg/marker-large.svg" alt="" />
+        </Marker>
       ))}
 
       {popupInfo && (
@@ -78,7 +78,7 @@ export default function Map(props: any) {
           }}
           paint={{
             "line-color": "rgb(255, 255, 255)",
-            "line-width": 4,
+            "line-width": 3,
           }}
         />
       </Source>
@@ -93,7 +93,7 @@ export default function Map(props: any) {
           }}
           paint={{
             "line-color": "rgb(84, 84, 84)",
-            "line-width": 4,
+            "line-width": 3,
           }}
         />
       </Source>
@@ -103,5 +103,5 @@ export default function Map(props: any) {
 
 function generateGreatCircleGeoJSON(start: any, end: any) {
   let generator = new arc.GreatCircle(start, end, { name: "name" });
-  return generator.Arc(10, { offset: 20 }).json();
+  return generator.Arc(35, { offset: 20 }).json();
 }
