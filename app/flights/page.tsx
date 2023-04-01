@@ -41,7 +41,7 @@ export default async function page() {
             <FlightsTable flights={upcomingFlights} />
           </div>
         )}
-        <div className="w-full rounded-lg border">
+        <div className="rounded-lg border overflow-hidden w-full">
           <Map
             locations={locations}
             upcomingRoutes={upcomingRoutes}
