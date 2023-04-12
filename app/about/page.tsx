@@ -72,20 +72,20 @@ export default function page() {
           </h3>
           <p className="text-lg">
             I'm available for freelance projects -&nbsp;
-            <span className="accentText">hire me!</span>
+            <a
+              className="accentText-noUnderline"
+              href="mailto:manuelnoahjenni@gmail.com?subject=Project">
+              hire me!
+            </a>
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <BoxThree
             top="Backend"
-            main="Java (Spring), NodeJS"
-            bottom="with SQL, Docker & Co."
+            main="Java (Spring), Node (NestJS)"
+            bottom="with SQL, Prisma, Docker & Co."
           />
-          <BoxThree
-            top="Frontend"
-            main="React, NextJS"
-            bottom="HTML, CSS, SASS, JS & TS"
-          />
+          <BoxThree top="Frontend" main="React, NextJS" bottom="HTML & CSS, JS & TS" />
         </div>
       </div>
       <div className="space-y-4">
