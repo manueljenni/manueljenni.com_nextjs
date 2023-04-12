@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SideProjects() {
   return (
     <>
-      <div className="rounded-lg p-4 ring-1 ring-neutral-300 boxComponent">
+      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
         <div className="flex h-full flex-col justify-between space-y-3">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -26,7 +26,7 @@ export default function SideProjects() {
           </div>
         </div>
       </div>
-      <div className="rounded-lg p-4 ring-1 ring-neutral-300 boxComponent">
+      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
         <div className="flex h-full flex-col justify-between space-y-3">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -48,7 +48,7 @@ export default function SideProjects() {
           </div>
         </div>
       </div>
-      <div className="rounded-lg p-4 ring-1 ring-neutral-300 boxComponent">
+      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
         <div className="flex h-full flex-col justify-between space-y-3">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -67,7 +67,7 @@ export default function SideProjects() {
           </div>
         </div>
       </div>
-      <div className="rounded-lg p-4 ring-1 ring-neutral-300 boxComponent">
+      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
         <div className="flex h-full flex-col justify-between space-y-3">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
