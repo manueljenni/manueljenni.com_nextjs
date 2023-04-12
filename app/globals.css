@@ -59,6 +59,10 @@ footer {
   @apply cursor-pointer text-main underline underline-offset-4 font-medium;
 }
 
+.accentText-noUnderline {
+  @apply  text-main font-medium;
+}
+
 .hover {
   position: relative;
   top: 0px;

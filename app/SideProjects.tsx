@@ -79,7 +79,7 @@ export default function SideProjects() {
             <div>
               <p className="text-base font-medium">All Swiss laws on mobile</p>
               <p className="text-base">
-                A mobile version of{" "}
+                A mobile version of&nbsp;
                 <Link
                   href="https://www.fedlex.admin.ch"
                   className="accentText"

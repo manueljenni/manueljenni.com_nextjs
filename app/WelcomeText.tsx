@@ -4,22 +4,22 @@ import Link from "next/link";
 
 export default function WelcomeText() {
   return (
-    <div className="space-y-6 text-center py-12">
+    <div className="space-y-6 py-12 text-center">
       <h1 className="text-6xl font-semibold leading-tight">
         Hi, I'm <span className={styles.welcomeText}>Manuel</span>.
       </h1>
-      <div className="text-xl space-y-2">
+      <div className="space-y-2 text-xl">
         <p>A consultant, developer and aspiring attorney.</p>
         <p>
-          Check out some of my{" "}
+          Check out some of my&nbsp;
           <Link href="/articles">
             <span className="accentText">thoughts</span>
           </Link>
-          ,{" "}
+          ,&nbsp;
           <Link href="/projects">
             <span className="accentText">projects</span>
-          </Link>{" "}
-          and{" "}
+          </Link>
+          &nbsp;and&nbsp;
           <Link href="/flights">
             <span className="accentText">travels</span>
           </Link>

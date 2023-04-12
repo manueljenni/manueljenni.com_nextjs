@@ -20,13 +20,8 @@ export default function page() {
               travelling the world as a digital nomad.
             </p>
             <p>
-              I'm also a passionate software developer - currently I'm working as a{" "}
-              <Link
-                href="https://www.ssd-consulting.de"
-                className="accentText"
-                target="_blank">
-                consultant and developer
-              </Link>{" "}
+              I'm also a passionate software developer - currently I'm working as a&nbsp;
+              <span className="accentText-noUnderline">consultant and developer </span>
               for Europe-based companies.
             </p>
             <p>
@@ -47,16 +42,11 @@ export default function page() {
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
         <div className="grid gap-4 md:grid-cols-2">
-          <Link
-            href="https://ssd-consulting.de/"
-            target="_blank"
-            className="pointer-important">
-            <BoxThree
-              top="SSD Consulting"
-              main="Consultant & Developer"
-              bottom="for various Europe-based clients"
-            />
-          </Link>
+          <BoxThree
+            top="SSD Consulting"
+            main="Consultant & Developer"
+            bottom="for various Europe-based clients"
+          />
           <Link
             href="https://www.mileways.com"
             target="_blank"
@@ -69,7 +59,7 @@ export default function page() {
           </Link>
           <BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />
           <BoxThree
-            top="ScriptySEO.com"
+            top="ScriptySEO"
             main="Content Writing Agency ✍️"
             bottom="Founder & CEO"
           />
@@ -81,7 +71,7 @@ export default function page() {
             Full Stack Software Developer
           </h3>
           <p className="text-lg">
-            I'm available for freelance projects -{" "}
+            I'm available for freelance projects -&nbsp;
             <span className="accentText">hire me!</span>
           </p>
         </div>
@@ -113,7 +103,7 @@ export default function page() {
           These are some projects I'm currently working on. Some are already functioning
           prototypes, and others are just ideas.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <SideProjects />
         </div>
       </div>
