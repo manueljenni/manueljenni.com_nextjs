@@ -14,19 +14,19 @@ export default function page() {
           <div className="space-y-4 text-lg md:w-2/3">
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
-            <p>I'm {Utils.getAge()} years and I'm currently living in London.</p>
+            <p>I'm {Utils.getAge()} years old and I'm currently living in London.</p>
             <p>
-              Originally I'm from Switzerland, but for the last two years, I've been
-              travelling the world as a digital nomad.
+              Originally, I'm from Switzerland but for the last two years I've been
+              travelling the world as a digital nomad, mostly based in Bangkok.
             </p>
             <p>
-              I'm also a passionate software developer - currently I'm working as a&nbsp;
-              <span className="accentText-noUnderline">consultant and developer </span>
+              I'm a passionate software developer - I work as a
+              <span className="accentText-noUnderline"> consultant and developer </span>
               for Europe-based companies.
             </p>
             <p>
               I'm also studying law at university and running my own content writing
-              agency.
+              agency, while building my own projects in my free time.
             </p>
           </div>
           <div className="hidden md:block">
@@ -37,6 +37,29 @@ export default function page() {
               height={300}
               className="rounded-full"></Image>
           </div>
+        </div>
+      </div>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h3 id="hireme" className="text-xl font-medium">
+            Full Stack Software Developer
+          </h3>
+          <p className="text-lg">
+            I'm available for freelance projects -&nbsp;
+            <a
+              className="accentText-noUnderline"
+              href="mailto:manuelnoahjenni@gmail.com?subject=Project">
+              hire me!
+            </a>
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          <BoxThree
+            top="Backend"
+            main="Java (Spring), Node (NestJS)"
+            bottom="with SQL, Prisma, Docker & Co."
+          />
+          <BoxThree top="Frontend" main="React, NextJS" bottom="HTML & CSS, JS & TS" />
         </div>
       </div>
       <div className="space-y-4">
@@ -63,29 +86,6 @@ export default function page() {
             main="Content Writing Agency ✍️"
             bottom="Founder & CEO"
           />
-        </div>
-      </div>
-      <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 id="hireme" className="text-xl font-medium">
-            Full Stack Software Developer
-          </h3>
-          <p className="text-lg">
-            I'm available for freelance projects -&nbsp;
-            <a
-              className="accentText-noUnderline"
-              href="mailto:manuelnoahjenni@gmail.com?subject=Project">
-              hire me!
-            </a>
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          <BoxThree
-            top="Backend"
-            main="Java (Spring), Node (NestJS)"
-            bottom="with SQL, Prisma, Docker & Co."
-          />
-          <BoxThree top="Frontend" main="React, NextJS" bottom="HTML & CSS, JS & TS" />
         </div>
       </div>
       <div className="space-y-4">

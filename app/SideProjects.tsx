@@ -22,11 +22,36 @@ export default function SideProjects() {
           </div>
           <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
             <p className="rounded bg-blue-200 py-1 px-2 text-blue-800">NextJS</p>
-            <p className="rounded bg-green-200 py-1 px-2 text-green-800">Spring Boot</p>
+            <p className="rounded bg-purple-200 py-1 px-2 text-purple-800">NestJS</p>
           </div>
         </div>
       </div>
       <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
+        <div className="flex h-full flex-col justify-between space-y-3">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <p className="text-2xl font-medium">Pretty New Tab</p>
+              <div className="flex space-x-3">
+                <p className="rounded bg-teal-200 py-1 px-2 text-sm uppercase">
+                  Extension
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-base font-medium">Make your new tab look pretty</p>
+              <p className="text-base">
+                Minimalist & customizable new tab extension for Chrome.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
+            <p className="rounded bg-cyan-200 py-1 px-2 text-cyan-800">React</p>
+            <p className="rounded bg-teal-200 py-1 px-2 text-teal-800">Chrome</p>
+          </div>
+        </div>
+      </div>
+      {/*
+        <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
         <div className="flex h-full flex-col justify-between space-y-3">
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -95,6 +120,7 @@ export default function SideProjects() {
           </div>
         </div>
       </div>
+  */}
     </>
   );
 }
