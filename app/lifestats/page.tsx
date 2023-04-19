@@ -1,6 +1,5 @@
-import React from "react";
-import fetchData from "../fetchData";
 import LifeStats from "../Components/LifeStats";
+import fetchData from "../fetchData";
 
 export default async function page() {
   var lifeStats = await fetchData.fetchLifeStats();

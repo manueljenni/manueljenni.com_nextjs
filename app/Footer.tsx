@@ -1,14 +1,13 @@
-import React from "react";
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer>
-      <div className="flex justify-between items-center w-full">
+      <div className="flex w-full items-center justify-between">
         <p className="text-base">© 2023 Manuel Jenni</p>
-        <div className="flex space-x-8 justify-end text-base text-main">
+        <div className="flex justify-end space-x-8 text-base text-main">
           <Link href={"https://www.instagram.com/manuelnoahjenni/"} target="_blank">
             <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
           </Link>

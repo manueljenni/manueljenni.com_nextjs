@@ -1,4 +1,3 @@
-import React from "react";
 import WelcomeBoxes from "../WelcomeBoxes";
 
 export default function WelcomeBoxesSection() {

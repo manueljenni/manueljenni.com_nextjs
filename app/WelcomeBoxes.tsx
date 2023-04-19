@@ -1,18 +1,17 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faNewspaper, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function WelcomeBoxes() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
       <Link href={"/about"}>
         <div className="box hover">
-          <div className="h-10 bg-main rounded-t-lg centerDiv">
+          <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">About me</p>
           </div>
-          <div className=" bg-white rounded-b-lg centerDiv">
-            <div className="p-8 space-y-4">
+          <div className=" centerDiv rounded-b-lg bg-white">
+            <div className="space-y-4 p-8">
               <p className="text-xl text-neutral-800">
                 Who am I?
                 <br />
@@ -25,11 +24,11 @@ export default function WelcomeBoxes() {
       </Link>
       <Link href="/articles">
         <div className="box hover">
-          <div className="h-10 bg-main rounded-t-lg centerDiv">
+          <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">Articles</p>
           </div>
-          <div className=" bg-white rounded-b-lg">
-            <div className="p-8 space-y-4">
+          <div className=" rounded-b-lg bg-white">
+            <div className="space-y-4 p-8">
               <p className="text-xl text-neutral-800">
                 Writing is like exercising - just for the brain.
               </p>
@@ -40,11 +39,11 @@ export default function WelcomeBoxes() {
       </Link>
       <Link href="/about">
         <div className="box hover">
-          <div className="h-10 bg-main rounded-t-lg centerDiv">
+          <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">Hire me!</p>
           </div>
-          <div className=" bg-white rounded-b-lg centerDiv">
-            <div className="p-8 space-y-4">
+          <div className=" centerDiv rounded-b-lg bg-white">
+            <div className="space-y-4 p-8">
               <p className="text-xl text-neutral-800">
                 I'm a software developer and content writer.
               </p>

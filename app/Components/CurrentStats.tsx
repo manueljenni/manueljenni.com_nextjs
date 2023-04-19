@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import BoxThree from "./BoxThree";
+import { useEffect, useState } from "react";
 import Utils from "../Utils";
+import BoxThree from "./BoxThree";
 
 export default function CurrentStats(props: any) {
   const nextFlight = props.nextFlight;
@@ -13,7 +13,7 @@ export default function CurrentStats(props: any) {
   }, []);
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <>
         {(nextFlight && (
           <>

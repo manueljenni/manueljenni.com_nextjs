@@ -1,4 +1,3 @@
-import React from "react";
 import SideProjects from "../SideProjects";
 
 export default function page() {
@@ -11,7 +10,7 @@ export default function page() {
           Here are some of my ideas, prototypes and stuff that I'm building.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <SideProjects />
       </div>
     </div>

@@ -1,7 +1,6 @@
-import React from "react";
 import FlightsTable from "../Components/FlightsTable";
-import fetchData from "../fetchData";
 import Map from "../Components/Map";
+import fetchData from "../fetchData";
 
 export default async function page() {
   const locations = await fetchData.getAllLocations();

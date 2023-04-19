@@ -1,9 +1,8 @@
-import React from "react";
+import Link from "next/link";
 import Utils from "../Utils";
 import BoxThree from "./BoxThree";
 import CurrentStats from "./CurrentStats";
 import FlightsTable from "./FlightsTable";
-import Link from "next/link";
 
 export default function LifeStats(props: any) {
   var thisYear = new Date().getFullYear();
@@ -69,7 +68,7 @@ export default function LifeStats(props: any) {
             <FlightsTable flights={pastFlights} />
           </div>
         </div>
-        <p className="text-lg accentText">
+        <p className="accentText text-lg">
           <Link href="/flights">View all flights (2021 - 2023) →</Link>
         </p>
       </div>
@@ -81,7 +80,7 @@ function YearlyStats(props: any) {
   return (
     <div className="space-y-4">
       <p className="text-lg font-medium">{props.year}</p>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <BoxThree
           top={"In " + props.year}
           main={props.flightsCount + " flights"}

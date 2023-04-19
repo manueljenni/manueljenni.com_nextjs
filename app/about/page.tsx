@@ -1,10 +1,9 @@
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import BoxThree from "../Components/BoxThree";
 import BoxTwo from "../Components/BoxTwo";
 import SideProjects from "../SideProjects";
 import Utils from "../Utils";
-import Link from "next/link";
-import Image from "next/image";
 
 export default function page() {
   return (

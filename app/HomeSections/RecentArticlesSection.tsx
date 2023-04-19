@@ -1,7 +1,6 @@
-import React from "react";
-import RecentArticles from "../RecentArticles";
-import fetchData from "../fetchData";
 import fs from "fs";
+import fetchData from "../fetchData";
+import RecentArticles from "../RecentArticles";
 
 export default async function RecentArticlesSection(props: any) {
   var articles = await fetchData.fetchArticlesSummary();

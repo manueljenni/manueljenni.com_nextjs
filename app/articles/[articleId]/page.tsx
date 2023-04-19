@@ -1,10 +1,9 @@
-import React from "react";
-import { unified } from "unified";
+import Link from "next/link";
+import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
+import { unified } from "unified";
 import fetchData from "../../fetchData";
-import Link from "next/link";
 
 export default async function page(props: any) {
   var article = fetchData.getArticleByFileName(props.params.articleId + ".md");
@@ -13,16 +12,16 @@ export default async function page(props: any) {
 
   return (
     <div>
-      <div className="text-center centerDiv">
-        <div className="space-y-6 mb-12">
+      <div className="centerDiv text-center">
+        <div className="mb-12 space-y-6">
           <div className="space-y-4">
             <h1 className="text-4xl font-medium">{article.title}</h1>
             <h2 className="text-2xl">{article.subtitle}</h2>
           </div>
           <div className="centerDiv">
-            <div className="flex space-x-3 text-white text-sm">
+            <div className="flex space-x-3 text-sm text-white">
               {tags.map((tag: string) => (
-                <div className="py-1 px-2 bg-main rounded-lg">
+                <div className="rounded-lg bg-main py-1 px-2">
                   <p>{"#" + tag}</p>
                 </div>
               ))}
@@ -32,7 +31,7 @@ export default async function page(props: any) {
       </div>
       <article className="prose" dangerouslySetInnerHTML={{ __html: html }} />
       <Link href={"/articles"}>
-        <p className="mt-8 accentText">← All articles</p>
+        <p className="accentText mt-8">← All articles</p>
       </Link>
     </div>
   );

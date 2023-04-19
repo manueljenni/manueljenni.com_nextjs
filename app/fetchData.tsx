@@ -56,17 +56,6 @@ async function getUpcomingFlights() {
   return json.sort((a: any, b: any) => {
     return a.departure.date - b.departure.date;
   });
-  return json;
-}
-
-async function getPastFlights() {
-  const response = await fetch(baseUrl + "/flights/allFlights/past", {
-    next: { revalidate: 60 },
-  });
-  var json = await response.json();
-  return json.sort((a: any, b: any) => {
-    return a.departure.date - b.departure.date;
-  });
 }
 
 async function getAllLocations() {

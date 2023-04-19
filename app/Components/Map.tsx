@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import MapboxMap, { Marker, Source, Layer, Popup } from "react-map-gl";
+import { useState } from "react";
+import MapboxMap, { Layer, Marker, Popup, Source } from "react-map-gl";
 const arc = require("arc");
 
 export default function Map(props: any) {
@@ -55,7 +55,7 @@ export default function Map(props: any) {
           latitude={Number(popupInfo.latitude)}
           onClose={() => setPopupInfo(null)}
           style={{ width: "300px" }}>
-          <div className="text-center space-y-1">
+          <div className="space-y-1 text-center">
             <p className="text-2xl font-medium">
               {popupInfo.city} ({popupInfo.iata})
             </p>

@@ -1,7 +1,6 @@
-import React from "react";
+import Link from "next/link";
 import CurrentStats from "../Components/CurrentStats";
 import fetchData from "../fetchData";
-import Link from "next/link";
 
 export default async function LifeStatsSection() {
   var upcomingFlight = await fetchData.getUpcomingFlights();
