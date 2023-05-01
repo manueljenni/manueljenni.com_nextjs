@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header>
+    <div>
       <div className="justify-between md:flex">
         <div className="header hidden md:block">
           <Link href="/">
@@ -24,6 +24,6 @@ export default function Header() {
           </Link>
         </div>
       </div>
-    </header>
+    </div>
   );
 }

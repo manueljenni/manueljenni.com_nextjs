@@ -24,7 +24,7 @@
     "gray-matter": "^4.0.3",
     "mapbox-gl": "^2.12.0",
     "matter": "^0.2.0",
-    "next": "^13.0.6",
+    "next": "^13.3.4-canary.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-map-gl": "^7.0.21",

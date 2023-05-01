@@ -36,6 +36,7 @@ function getMetaObjOfFile(fileName: string) {
     publicationDate: data.publicationDate,
     tags: data.tags,
     content: content,
+    shareImage: data.shareImage,
   };
 }
 

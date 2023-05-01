@@ -1,9 +1,68 @@
+import { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
-import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
+import rehypeStringify from "rehype-stringify/lib";
+import remarkParse from "remark-parse/lib";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import fetchData from "../../fetchData";
+
+/*
+<title>{article.title}</title>
+        <meta name="title" content={article.title} key="title" />
+        <meta name="description" content={article.summary} />
+
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content={"https://manueljenni.com/articles" + article.link}
+        />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.summary} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content={"https://manueljenni.com/articles" + article.link}
+        />
+        <meta property="twitter:title" content={article.title} />
+        <meta property="twitter:description" content={article.summary} />
+        {article.shareImage && (
+          <>
+            <meta
+              property="twitter:image"
+              content={`https://manueljenni.com` + article.shareImage}
+            />
+            <meta
+              property="og:image"
+              content={`https://manueljenni.com` + article.shareImage}
+            />
+          </>
+        )}
+        */
+
+export async function generateMetadata(
+  { params }: any,
+  parent?: ResolvingMetadata
+): Promise<Metadata> {
+  var article = fetchData.getArticleByFileName(params.articleId + ".md");
+  return {
+    title: article.title,
+    description: article.summary,
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      url: "https://manueljenni.com/articles/" + article.link,
+      images: [
+        {
+          url: "https://manueljenni.com" + article.shareImage,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+  };
+}
 
 export default async function page(props: any) {
   var article = fetchData.getArticleByFileName(props.params.articleId + ".md");

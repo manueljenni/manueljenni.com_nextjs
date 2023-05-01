@@ -7,6 +7,7 @@ tags: coding,buildinpublic
 category: coding
 link: launching-freelancely-alpha
 publicationDate: 2023-05-01
+shareImage: /img/launching-freelancely/freelancely-ss1.png
 ---
 
 Freelancely is a bookkeeping app for freelancers that I'm building. Try it out at [freelancely.app](https://freelancely.app). :)
