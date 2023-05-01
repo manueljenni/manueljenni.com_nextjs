@@ -7,6 +7,7 @@ tags: travel,japan,photography
 category: travel
 link: japan-2022
 publicationDate: 2023-01-26
+shareImage: /img/japan-2022/tokyo-1.jpg
 ---
 
 Here are a few pictures of my trip to Japan in 2022. I'm putting this here mostly to look at it myself ;)
