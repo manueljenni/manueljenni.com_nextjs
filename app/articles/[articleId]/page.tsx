@@ -9,7 +9,7 @@ import fetchData from "../../fetchData";
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   var article = fetchData.getArticleByFileName(params.articleId + ".md");
   let images = null;
-  if (article.shareImage) {
+  if (article.shareImage !== undefined) {
     images = [
       {
         url: "https://manueljenni.com" + article.shareImage,
