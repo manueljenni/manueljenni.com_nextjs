@@ -8,6 +8,17 @@ import fetchData from "../../fetchData";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   var article = fetchData.getArticleByFileName(params.articleId + ".md");
+  let images = null;
+  if (article.shareImage) {
+    images = [
+      {
+        url: "https://manueljenni.com" + article.shareImage,
+        width: 1200,
+        height: 630,
+        alt: article.title,
+      },
+    ];
+  }
   return {
     title: article.title,
     description: article.summary,
@@ -15,14 +26,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       title: article.title,
       description: article.summary,
       url: "https://manueljenni.com/articles/" + article.link,
-      images: [
-        {
-          url: "https://manueljenni.com" + article.shareImage,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ],
+      ...images,
     },
   };
 }
