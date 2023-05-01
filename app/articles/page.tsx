@@ -3,6 +3,7 @@ import RecentArticles from "../RecentArticles";
 
 export default async function page() {
   var articles = await fetchData.fetchArticlesSummary();
+
   return (
     <div className="space-y-8">
       <h1 className="text-3xl font-medium">Articles</h1>

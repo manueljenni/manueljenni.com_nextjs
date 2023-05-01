@@ -11,7 +11,12 @@ function fetchArticlesSummary() {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
   return files
     .filter((file) => file.includes(".md"))
-    .map((file) => getMetaObjOfFile(file));
+    .map((file) => getMetaObjOfFile(file))
+    .sort((a, b) => {
+      return (
+        new Date(a.publicationDate).getDate() - new Date(b.publicationDate).getDate()
+      );
+    });
 }
 
 function getArticleByFileName(fileName: string) {

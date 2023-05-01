@@ -4,6 +4,7 @@ import RecentArticles from "../RecentArticles";
 
 export default async function RecentArticlesSection(props: any) {
   var articles = await fetchData.fetchArticlesSummary();
+
   return (
     <div className="space-y-8">
       <h1 className="text-3xl font-medium">Recent articles</h1>
