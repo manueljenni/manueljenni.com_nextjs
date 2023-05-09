@@ -47,7 +47,7 @@ export default async function page(props: any) {
           <div className="centerDiv">
             <div className="flex space-x-3 text-sm text-white">
               {tags.map((tag: string) => (
-                <div className="rounded-lg bg-main py-1 px-2">
+                <div className="rounded-lg bg-main py-1 px-2" id={tag}>
                   <p>{"#" + tag}</p>
                 </div>
               ))}

@@ -37,6 +37,7 @@ export default function Map(props: any) {
       mapboxAccessToken="pk.eyJ1IjoibWFudWVsbm9haGplbm5pIiwiYSI6ImNrdmk2N2NhazAyajgycG52Y2l5N2p5MGYifQ.ZHY3Gijy7ldNBUzPKlA2mg"
       projection={"globe"}>
       {props.locations.map((location: any) => (
+        <div id={location.longitude + ' ' + location.latitude}>
         <Marker
           longitude={location.longitude}
           latitude={location.latitude}
@@ -46,6 +47,7 @@ export default function Map(props: any) {
           }}>
           <img src="/svg/marker-large.svg" alt="" />
         </Marker>
+        </div>
       ))}
 
       {popupInfo && (

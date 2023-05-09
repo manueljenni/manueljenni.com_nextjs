@@ -23,7 +23,7 @@ export default function FlightRow(props: any) {
           </p>
         </div>
         <div className="table-cell whitespace-nowrap px-4 py-4 text-xl">
-          <b>{flight.departure.city}</b>{" "}
+          <b>{flight.departure.city.split(',')[0]}</b>{" "}
           <span className="text-base">({flight.departure.iata})</span>
           <br />
           <p className="text-base text-gray-400">{flight.departure.countryName}</p>

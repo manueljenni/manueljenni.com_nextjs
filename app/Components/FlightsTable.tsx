@@ -25,7 +25,7 @@ export default function FlightsTable(props: any) {
         <div className="table-row-group">
           {flights &&
             flights.map((flight: any) => (
-              <FlightRow flight={flight} key={flight.milewaysUrl} />
+              <FlightRow flight={flight} key={flight.milewaysUrl} id={flight.id} />
             ))}
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function FlightsTable(props: any) {
         <div className="table-row-group">
           {flights &&
             flights.map((flight: any) => (
-              <FlightRow flight={flight} key={flight.milewaysUrl} />
+              <FlightRow flight={flight} key={flight.milewaysUrl} id={flight.id} />
             ))}
         </div>
       </div>
