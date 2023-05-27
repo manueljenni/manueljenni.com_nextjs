@@ -4,7 +4,6 @@ import matter from "gray-matter";
 // Bypass corporate proxy
 // process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
-// var baseUrl = "https://damp-atoll-27311.herokuapp.com/api";
 var baseUrl = "https://web-api-nest.herokuapp.com/api";
 
 function fetchArticlesSummary() {
