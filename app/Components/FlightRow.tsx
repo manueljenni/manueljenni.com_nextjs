@@ -55,7 +55,7 @@ export default function FlightRow(props: any) {
     return (
       <div
         key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata}
-        className="table-row odd:bg-gray-200 hover:cursor-pointer"
+        className="table-row odd:bg-dark-light odd:bg-gray-200 hover:cursor-pointer"
         onClick={() => window.open(flight.milewaysUrl)}>
         <div className="table-cell px-4 py-4 text-xl">
           <span className="text-lg text-gray-400">
