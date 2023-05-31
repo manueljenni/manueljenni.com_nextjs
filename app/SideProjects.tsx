@@ -9,8 +9,8 @@ export default function SideProjects() {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <p className="text-2xl font-medium">Freelancely</p>
-                <div className="flex space-x-3">
-                  <p className="rounded bg-blue-200 py-1 px-2 text-sm uppercase">Web</p>
+                <div className="flex space-x-3 dark:text-neutral-800">
+                  <p className="rounded bg-blue-200 px-2 py-1 text-sm uppercase">Web</p>
                 </div>
               </div>
               <div>
@@ -21,9 +21,9 @@ export default function SideProjects() {
               </div>
             </div>
           </Link>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-blue-200 py-1 px-2 text-blue-800">NextJS</p>
-            <p className="rounded bg-purple-200 py-1 px-2 text-purple-800">NestJS</p>
+          <div className="flex items-center space-x-3 pt-2 text-xs uppercase dark:text-neutral-800">
+            <p className="rounded bg-blue-200 px-2 py-1 text-blue-800">NextJS</p>
+            <p className="rounded bg-purple-200 px-2 py-1 text-purple-800">NestJS</p>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function SideProjects() {
             <div className="flex items-center justify-between">
               <p className="text-2xl font-medium">Pretty New Tab</p>
               <div className="flex space-x-3">
-                <p className="rounded bg-teal-200 py-1 px-2 text-sm uppercase">
+                <p className="rounded bg-teal-200 px-2 py-1 text-sm uppercase dark:text-neutral-800">
                   Extension
                 </p>
               </div>
@@ -46,8 +46,8 @@ export default function SideProjects() {
             </div>
           </div>
           <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-cyan-200 py-1 px-2 text-cyan-800">React</p>
-            <p className="rounded bg-teal-200 py-1 px-2 text-teal-800">Chrome</p>
+            <p className="rounded bg-cyan-200 px-2 py-1 text-cyan-800">React</p>
+            <p className="rounded bg-teal-200 px-2 py-1 text-teal-800">Chrome</p>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function FlightRow(props: any) {
     return (
       <div
         key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata}
-        className="table-row odd:bg-gray-200 hover:cursor-pointer"
+        className="table-row odd:bg-gray-200 hover:cursor-pointer odd:dark:bg-dark-light"
         onClick={() => window.open(flight.milewaysUrl)}>
         <div className="table-cell whitespace-nowrap px-4 py-4 text-xl">
           {Utils.parseDate(flight.departureTime)}
@@ -23,7 +23,7 @@ export default function FlightRow(props: any) {
           </p>
         </div>
         <div className="table-cell whitespace-nowrap px-4 py-4 text-xl">
-          <b>{flight.departure.city.split(',')[0]}</b>{" "}
+          <b>{flight.departure.city.split(",")[0]}</b>{" "}
           <span className="text-base">({flight.departure.iata})</span>
           <br />
           <p className="text-base text-gray-400">{flight.departure.countryName}</p>

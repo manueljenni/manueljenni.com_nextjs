@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="body my-8 flex flex-col justify-between space-y-12 bg-neutral-50">
+      <body className="body my-8 flex flex-col justify-between space-y-12 bg-neutral-50 dark:bg-dark dark:text-white">
         <section className="m-0 space-y-12 p-0">
           <Header />
           {children}

@@ -43,7 +43,7 @@ footer {
 }
 
 .box {
-  @apply rounded-lg bg-white text-center shadow h-full;
+  @apply rounded-lg bg-white text-center shadow h-full dark:bg-dark-light dark:text-white text-neutral-800;
 }
 
 .boxComponent {
@@ -121,6 +121,10 @@ footer {
   max-width: none !important;
   margin-left: auto;
   margin-right: auto;
+}
+
+.prose * {
+  @apply dark:text-white
 }
 
 .table-cell {

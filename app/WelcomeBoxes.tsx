@@ -10,9 +10,9 @@ export default function WelcomeBoxes() {
           <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">About me</p>
           </div>
-          <div className=" centerDiv rounded-b-lg bg-white">
+          <div className=" centerDiv rounded-b-lg ">
             <div className="space-y-4 p-8">
-              <p className="text-xl text-neutral-800">
+              <p className="text-xl ">
                 Who am I?
                 <br />
                 Get to know me here.
@@ -27,11 +27,9 @@ export default function WelcomeBoxes() {
           <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">Articles</p>
           </div>
-          <div className=" rounded-b-lg bg-white">
+          <div className="rounded-b-lg">
             <div className="space-y-4 p-8">
-              <p className="text-xl text-neutral-800">
-                Writing is like exercising - just for the brain.
-              </p>
+              <p className="text-xl">Writing is like exercising - just for the brain.</p>
               <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
             </div>
           </div>
@@ -42,11 +40,9 @@ export default function WelcomeBoxes() {
           <div className="centerDiv h-10 rounded-t-lg bg-main">
             <p className="text-xl uppercase">Hire me!</p>
           </div>
-          <div className=" centerDiv rounded-b-lg bg-white">
+          <div className=" centerDiv rounded-b-lg">
             <div className="space-y-4 p-8">
-              <p className="text-xl text-neutral-800">
-                I'm a software developer and content writer.
-              </p>
+              <p className="text-xl ">I'm a software developer and content writer.</p>
               <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
             </div>
           </div>
