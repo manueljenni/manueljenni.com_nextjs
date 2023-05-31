@@ -42,12 +42,12 @@ function getPastDaysAsText(dateInput: number): String {
   }
 }
 
-function percentageOfYear(days: number) {
-  const currentDaysPassed = Math.round(
-    (new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
-      (1000 * 3600 * 24)
+function percentageOfYear(days: number, year: number) {
+  const daysPassedInYear = Math.round(
+    (new Date().getTime() - new Date(year, 0, 1).getTime()) / (1000 * 3600 * 24)
   );
-  return Math.round((days / currentDaysPassed) * 100);
+  const daysInYear = year == new Date().getFullYear() ? daysPassedInYear : 365;
+  return Math.round((days / daysInYear) * 100);
 }
 
 function getCurrentTimeEmoji(date: Date) {

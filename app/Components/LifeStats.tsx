@@ -94,7 +94,9 @@ function YearlyStats(props: any) {
         <BoxThree
           top={"In " + props.year + ", spent"}
           main={props.daysAbroad + " days"}
-          bottom={"abroad (" + Utils.percentageOfYear(props.daysAbroad) + "%)"}
+          bottom={
+            "abroad (" + Utils.percentageOfYear(props.daysAbroad, props.year) + "%)"
+          }
         />
       </div>
     </div>
