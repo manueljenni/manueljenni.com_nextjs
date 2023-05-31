@@ -43,7 +43,11 @@ function getPastDaysAsText(dateInput: number): String {
 }
 
 function percentageOfYear(days: number) {
-  return Math.round((days / 365) * 100);
+  const currentDaysPassed = Math.round(
+    (new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
+      (1000 * 3600 * 24)
+  );
+  return Math.round((days / currentDaysPassed) * 100);
 }
 
 function getCurrentTimeEmoji(date: Date) {

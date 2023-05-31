@@ -5,7 +5,7 @@ import FlightRow from "./FlightRow";
 export default function FlightsTable(props: any) {
   var flights = props.flights;
   var { width } = { width: 1200 };
-  if (typeof window != undefined) {
+  if (typeof window !== "undefined") {
     var { width } = useWindowDimensions();
   }
 
