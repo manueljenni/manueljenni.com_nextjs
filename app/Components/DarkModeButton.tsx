@@ -4,20 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 export function DarkModeButton() {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
-
-  // Check user preference on initial load
-  useEffect(() => {
-    const rootElement = document.documentElement;
-    if (
-      window.matchMedia("(prefers-color-scheme: dark)").matches ||
-      rootElement.classList.contains("dark")
-    ) {
-      setDarkMode(true);
-    } else {
-      setDarkMode(false);
-    }
-  }, []);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
     const rootElement = document.documentElement;
