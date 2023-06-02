@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DarkModeButton } from "./Components/DarkModeButton";
 
 export default function Header() {
   return (
@@ -22,6 +23,7 @@ export default function Header() {
           <Link href={"/lifestats"}>
             <p>LifeStats</p>
           </Link>
+          <DarkModeButton />
         </div>
       </div>
     </div>
