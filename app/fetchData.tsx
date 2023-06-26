@@ -80,14 +80,14 @@ async function getAllLocations() {
 
 async function fetchAllUpcomingRoutes() {
   const response = await fetch(baseUrl + "/routes/upcoming", {
-    next: { revalidate: 60000 },
+    next: { revalidate: 0 },
   });
   return await response.json();
 }
 
 async function fetchAllPastRoutes() {
   const response = await fetch(baseUrl + "/routes/past", {
-    next: { revalidate: 60000 },
+    next: { revalidate: 0 },
   });
   return await response.json();
 }
