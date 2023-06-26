@@ -6,13 +6,13 @@ summary: Freelancely is a bookkeeping app for freelancers that I'm building. I'm
 tags: coding,buildinpublic
 category: coding
 link: launching-freelancely-alpha
-publicationDate: 2023-05-01
+publicationDate: 2023-01-05
 shareImage: /img/launching-freelancely/freelancely-ss1.jpg
 ---
 
 Freelancely is a bookkeeping app for freelancers that I'm building. Try it out at [freelancely.app](https://freelancely.app). :)
 
-<div class="w-full"> <img src="/img/launching-freelancely/freelancely-ss1.jpg" class="rounded-lg"></div>
+<div class="w-full"><img src="/img/launching-freelancely/freelancely-ss1.jpg" class="rounded-lg"></div>
 
 ## Life as a freelancer
 

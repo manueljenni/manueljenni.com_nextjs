@@ -11,10 +11,8 @@ function fetchArticlesSummary() {
   return files
     .filter((file) => file.includes(".md"))
     .map((file) => getMetaObjOfFile(file))
-    .sort((a, b) => {
-      return (
-        new Date(a.publicationDate).getDate() - new Date(b.publicationDate).getDate()
-      );
+    .sort((a: any, b: any) => {
+      return b.id - a.id;
     });
 }
 
