@@ -15,17 +15,23 @@ export default function page() {
             <p>Hi, I'm Manuel. :)</p>
             <p>I'm {Utils.getAge()} years old and I'm currently living in London.</p>
             <p>
-              Originally, I'm from Switzerland but for the last two years I've been
-              travelling the world as a digital nomad, mostly based in Bangkok.
+              I'm a passionate <span className="accentText-noUnderline"> developer </span>{" "}
+              - I work at{" "}
+              <Link href="https://www.owt.swiss/en/" target={"_"} className="accentText">
+                OWT
+              </Link>
+              , the consulting subsidiary of Switzerland's largest telecom company.
             </p>
             <p>
-              I'm a passionate software developer - I work as a
-              <span className="accentText-noUnderline"> consultant and developer </span>
-              for Europe-based companies.
+              Originally, I'm from Switzerland but for the last two years I've been{" "}
+              <Link href={"/flights"} className="accentText">
+                travelling the world
+              </Link>{" "}
+              as a digital nomad, mostly based in Bangkok.
             </p>
             <p>
-              I'm also studying law at university and running my own content writing
-              agency, while building my own projects in my free time.
+              I'm also studying law at university, run my own content writing agency and
+              build side projects in my free time.
             </p>
           </div>
           <div className="hidden md:block">
@@ -56,18 +62,18 @@ export default function page() {
           <BoxThree
             top="Backend"
             main="Java (Spring), Node (NestJS)"
-            bottom="with SQL, Prisma, Docker & Co."
+            bottom="with Postgres, Docker & Co."
           />
-          <BoxThree top="Frontend" main="React, NextJS" bottom="HTML & CSS, JS & TS" />
+          <BoxThree top="Frontend" main="React, NextJS" bottom="with TypeScript" />
         </div>
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
         <div className="grid gap-4 md:grid-cols-2">
           <BoxThree
-            top="SSD Consulting"
-            main="Consultant & Developer"
-            bottom="for various Europe-based clients"
+            top="Open Web Technology"
+            main="Developer"
+            bottom="Digitalizing Swiss companies"
           />
           <Link
             href="https://www.mileways.com"
@@ -92,7 +98,7 @@ export default function page() {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <BoxTwo main="Travel" bottom="✈️" />
           <BoxTwo main="Photography" bottom="📸" />
-          <BoxTwo main="Piano & Music" bottom="🎹" />
+          <BoxTwo main="Piano" bottom="🎹" />
           <BoxTwo main="Food ;)" bottom="🍜" />
         </div>
       </div>
