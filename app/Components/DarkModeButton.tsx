@@ -7,11 +7,20 @@ export function DarkModeButton() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
+    const hasDarkMode = localStorage.getItem("darkMode");
+    if (hasDarkMode == "true") {
+      setDarkMode(true);
+    } else setDarkMode(false);
+  }, []);
+
+  useEffect(() => {
     const rootElement = document.documentElement;
     if (darkMode) {
       rootElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
     } else {
       rootElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false");
     }
   }, [darkMode]);
 

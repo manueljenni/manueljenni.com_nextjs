@@ -108,8 +108,21 @@ footer {
   margin-bottom: .5em;
 }
 
+.prose div {
+  margin-bottom: .5em;
+}
+
+.prose div div {
+  margin-bottom: 1.4em;
+}
+
 .prose div img {
   margin-top: .4em;
+  margin-bottom: .4em;
+}
+
+.caption {
+  @apply text-sm font-medium;
 }
 
 .prose ul {
