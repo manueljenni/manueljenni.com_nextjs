@@ -27,25 +27,44 @@ The flight was nothing special too - in Business, you just get the middle seat b
 
 ### Zurich - Singapore
 
-After landing in Zurich, we went to the Senator Lounge at gates E. This was really nice, one of the better lounges I've visited so far. It was very clean and quite empty, and they also had some food.
+After landing in Zurich, we went to the Senator Lounge at Gates E. It was really nice, one of the better lounges I've visited so far. The lounge was very clean and quite empty, and they also served some food. There was no a la carte menu, but they had some dishes and a buffet section. There was also self-serve alcohol and a cool coffee machine.
 
 <div class="sd:flex-col sd:space-x-0 lg:space-x-4 lg:flex">
     <div>
         <img src="/img/swiss-business/senator-lounge-1.jpg" alt="">
+        <div class="caption">The entrance - turn left and you'll find the Whisky Club 28/10. The main area is on the right side.</div>
     </div>
     <div>
         <img src="/img/swiss-business/senator-lounge-2.jpg" alt="">
-        </div>
+        <div class="caption">Bar area - there are also plenty of prober tables on the other side.</div>
+    </div>
     <div>
         <img src="/img/swiss-business/senator-lounge-5.jpg" alt="">
+        <div class="caption">There is a coffee machine that can make anything... such as an Iced Caramel Latte!</div>
     </div>
 </div>
 
 <div class="sd:flex-col sd:space-x-0 lg:space-x-4 lg:flex">
     <div style="flex: calc(3024/4032);">
         <img src="/img/swiss-business/senator-lounge-4.jpg" alt="">
+        <div class="caption">There is a nice terrace...</div>
     </div>
     <div style="flex: calc(4032/3024);">
         <img src="/img/swiss-business/senator-lounge-3.jpg" alt="">
+        <div class="caption">...with a view of the runway.</div>
     </div>
 </div>
+
+### The seat
+
+Swiss operates their 777 flights in a 2-2-1 configuration. I really don't like this - I much prefer the 1-2-1 that other airlines have. If you don't get one of the "throne seats" (Swiss calls them "privacy seats"), you might have to climb over your neighbour to get out. Privacy is also almost non-existent, which for me is one of the main selling points for flying Business. Those seats can cost up to $200 extra, unless you're a Senator or HON Circle member.
+
+But I was sitting in 15K, one of the throne seats. There was plenty of space - I could keep my laptop open on the side while eating.
+
+Boarding was quite quick, and there was a welcome drink (champagne, juice or water) before takeoff. We also got to choose breakfast options. I also had a look at the amenity kit which was nothing interesting, some weird red socks and a toothbrush amongst other things.
+
+### Food & service
+
+The service is where the differene between Middle Eastern and Western airlines becomes very apparent. Even though the cabin crew was very nice, the service wasn't just personal at all. It felt more like Economy than Business - seems like Middle Eastern Business Class is more comparable to Western First class.
+
+For example, when food was served, they started walking from
