@@ -63,7 +63,7 @@ async function getUpcomingFlights() {
 
 async function getPastFlights() {
   const response = await fetch(baseUrl + "/flights/allFlights/past", {
-    next: { revalidate: 60 },
+    next: { revalidate: 0 },
   });
   var json = await response.json();
   return json.sort((a: any, b: any) => {
@@ -73,7 +73,7 @@ async function getPastFlights() {
 
 async function getAllLocations() {
   const response = await fetch(baseUrl + "/airport", {
-    next: { revalidate: 60000 },
+    next: { revalidate: 0 },
   });
   return await response.json();
 }
