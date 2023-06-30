@@ -9,7 +9,7 @@ var baseUrl = "https://web-api-nest.herokuapp.com/api";
 function fetchArticlesSummary() {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
   return files
-    .filter((file) => file.includes(".md"))
+    .filter((file) => file.includes(".mdx"))
     .map((file) => getMetaObjOfFile(file))
     .sort((a: any, b: any) => {
       return b.id - a.id;
@@ -27,7 +27,7 @@ function getMetaObjOfFile(fileName: string) {
     id: data.id,
     title: data.title,
     subtitle: data.subtitle,
-    link: fileName.replaceAll(".md", ""),
+    link: fileName.replaceAll(".mdx", ""),
     summary: data.summary,
     category: data.category,
     publicationDate: data.publicationDate,
