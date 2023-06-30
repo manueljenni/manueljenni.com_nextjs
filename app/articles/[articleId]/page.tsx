@@ -81,6 +81,7 @@ export default async function page(props: any) {
 export const generateStaticParams = async () => {
   const files = fs.readdirSync(process.cwd() + "/app/articles/md");
   return files.map((file) => {
+    if (!file.includes(".md")) return;
     const fileRead = fs.readFileSync(process.cwd() + `/app/articles/md/${file}`, "utf-8");
     const { data, content } = matter(fileRead);
     return {
