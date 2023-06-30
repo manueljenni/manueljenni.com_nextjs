@@ -1,13 +1,12 @@
+import fs from "fs";
+import matter from "gray-matter";
 import { Metadata } from "next";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
-import rehypeStringify from "rehype-stringify/lib";
-import remarkParse from "remark-parse/lib";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
 import fetchData from "../../fetchData";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  var article = fetchData.getArticleByFileName(params.articleId + ".md");
+  var article = fetchData.getArticleByFileName(params.articleId + ".mdx");
   let images: any[] = [];
   if (article.shareImage !== undefined) {
     images = [
@@ -32,22 +31,35 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 }
 
 export default async function page(props: any) {
-  var article = fetchData.getArticleByFileName(props.params.articleId + ".md");
-  var html = await getMarkdownAsHtml(article.content);
-  var tags = article.tags.split(",");
-
+  const article = fs.readFileSync(
+    process.cwd() + `/app/articles/md/${props.params.articleId}.mdx`,
+    "utf-8"
+  );
+  const { data, content } = matter(article);
+  const meta = {
+    id: data.id,
+    title: data.title,
+    subtitle: data.subtitle,
+    link: props.params.articleId,
+    summary: data.summary,
+    category: data.category,
+    publicationDate: data.publicationDate,
+    tags: data.tags.split(","),
+    content: "",
+    shareImage: data.shareImage,
+  };
   return (
     <div>
       <div className="centerDiv text-center">
         <div className="mb-12 space-y-6">
           <div className="space-y-4">
-            <h1 className="text-4xl font-medium">{article.title}</h1>
-            <h2 className="text-2xl">{article.subtitle}</h2>
+            <h1 className="text-4xl font-medium">{meta.title}</h1>
+            <h2 className="text-2xl">{meta.subtitle}</h2>
           </div>
           <div className="centerDiv">
             <div className="flex space-x-3 text-sm text-white">
-              {tags.map((tag: string) => (
-                <div className="rounded-lg bg-main py-1 px-2" id={tag}>
+              {meta.tags.map((tag: string) => (
+                <div className="rounded-lg bg-main px-2 py-1" id={tag}>
                   <p>{"#" + tag}</p>
                 </div>
               ))}
@@ -55,7 +67,10 @@ export default async function page(props: any) {
           </div>
         </div>
       </div>
-      <article className="prose" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="prose">
+        {/* @ts-expect-error Server Component */}
+        <MDXRemote source={content} />
+      </div>
       <Link href={"/articles"}>
         <p className="accentText mt-8">← All articles</p>
       </Link>
@@ -63,21 +78,14 @@ export default async function page(props: any) {
   );
 }
 
-async function getMarkdownAsHtml(content: string) {
-  return await (
-    await unified()
-      .use(remarkParse)
-      .use(remarkRehype, { allowDangerousHtml: true })
-      .use(rehypeStringify, { allowDangerousHtml: true })
-      .process(content)
-  ).toString();
-
-  // return await (await remark().use(remarkHtml).process(content)).toString();
-}
-
 export const generateStaticParams = async () => {
-  var allArticles = await fetchData.fetchArticlesSummary();
-  return allArticles.map((article: any) => ({
-    articleId: article.link.toString(),
-  }));
+  const files = fs.readdirSync(process.cwd() + "/app/articles/md");
+  return files.map((file) => {
+    if (!file.includes(".md")) return;
+    const fileRead = fs.readFileSync(process.cwd() + `/app/articles/md/${file}`, "utf-8");
+    const { data, content } = matter(fileRead);
+    return {
+      articleId: data.link,
+    };
+  });
 };
