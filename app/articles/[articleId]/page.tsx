@@ -48,6 +48,7 @@ export default async function page(props: any) {
     content: "",
     shareImage: data.shareImage,
   };
+
   return (
     <div>
       <div className="centerDiv text-center">
@@ -69,7 +70,7 @@ export default async function page(props: any) {
       </div>
       <div className="prose">
         {/* @ts-expect-error Server Component */}
-        <MDXRemote source={content} />
+        <MDXRemote {...props.mdxSource} />
       </div>
       <Link href={"/articles"}>
         <p className="accentText mt-8">← All articles</p>
@@ -83,7 +84,7 @@ export const generateStaticParams = async () => {
   return files.map((file) => {
     if (!file.includes(".md")) return;
     const fileRead = fs.readFileSync(process.cwd() + `/app/articles/md/${file}`, "utf-8");
-    const { data, content } = matter(fileRead);
+    const { data } = matter(fileRead);
     return {
       articleId: data.link,
     };

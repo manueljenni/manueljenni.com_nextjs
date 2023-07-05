@@ -63,7 +63,7 @@ function getCurrentTimeEmoji(date: Date) {
   }
 }
 
-function parseDate(input_date: string) {
+function parseDate(inputDate: string) {
   const monthNames = [
     "Jan",
     "Feb",
@@ -79,7 +79,7 @@ function parseDate(input_date: string) {
     "Dec",
   ];
 
-  var date = new Date(input_date);
+  var date = new Date(inputDate);
   return monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
 }
 
@@ -125,7 +125,7 @@ function getDaysOfCurrentYear(): number {
   return (
     Math.floor(
       (new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
-        (1000 * 60 * 60 * 24)
+      (1000 * 60 * 60 * 24)
     ) + 1
   );
 }
