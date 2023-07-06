@@ -45,7 +45,7 @@ async function getArticleById(id: number) {
 
 async function fetchLifeStats() {
   const response = await fetch(baseUrl + "/stats/statsByYear", {
-    next: { revalidate: 60 },
+    next: { revalidate: 900 },
   });
   const json = await response.json();
   return json;
@@ -53,7 +53,7 @@ async function fetchLifeStats() {
 
 async function getUpcomingFlights() {
   const response = await fetch(baseUrl + "/flights/allFlights/upcoming", {
-    next: { revalidate: 60 },
+    next: { revalidate: 900 },
   });
   var json = await response.json();
   return json.sort((a: any, b: any) => {
@@ -63,7 +63,7 @@ async function getUpcomingFlights() {
 
 async function getPastFlights() {
   const response = await fetch(baseUrl + "/flights/allFlights/past", {
-    next: { revalidate: 0 },
+    next: { revalidate: 900 },
   });
   var json = await response.json();
   return json.sort((a: any, b: any) => {
@@ -73,21 +73,21 @@ async function getPastFlights() {
 
 async function getAllLocations() {
   const response = await fetch(baseUrl + "/airport", {
-    next: { revalidate: 0 },
+    next: { revalidate: 900 },
   });
   return await response.json();
 }
 
 async function fetchAllUpcomingRoutes() {
   const response = await fetch(baseUrl + "/routes/upcoming", {
-    next: { revalidate: 0 },
+    next: { revalidate: 900 },
   });
   return await response.json();
 }
 
 async function fetchAllPastRoutes() {
   const response = await fetch(baseUrl + "/routes/past", {
-    next: { revalidate: 0 },
+    next: { revalidate: 900 },
   });
   return await response.json();
 }
