@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="flex w-full items-center justify-between">
         <p className="text-base">© 2023 Manuel Jenni</p>
         <div className="flex justify-end space-x-8 text-base text-main">
-          <Link href={"https://www.instagram.com/manuelnoahjenni/"} target="_blank">
+          <Link href={"https://www.instagram.com/_manuelnoah_/"} target="_blank">
             <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
           </Link>
         </div>

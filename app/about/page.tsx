@@ -3,7 +3,6 @@ import Link from "next/link";
 import BoxThree from "../Components/BoxThree";
 import BoxTwo from "../Components/BoxTwo";
 import SideProjects from "../SideProjects";
-import Utils from "../Utils";
 
 export default function page() {
   return (
@@ -13,7 +12,13 @@ export default function page() {
           <div className="space-y-4 text-lg md:w-2/3">
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
-            <p>I'm {Utils.getAge()} years old and I'm currently living in London.</p>
+            <p>
+              Originally, I'm from Switzerland but for the last two years I've been{" "}
+              <Link href={"/flights"} className="accentText">
+                travelling the world
+              </Link>{" "}
+              as a digital nomad, mostly based in Bangkok.
+            </p>
             <p>
               I'm a passionate <span className="accentText-noUnderline"> developer </span>{" "}
               - I work at{" "}
@@ -21,13 +26,6 @@ export default function page() {
                 OWT
               </Link>
               , the consulting subsidiary of Switzerland's largest telecom company.
-            </p>
-            <p>
-              Originally, I'm from Switzerland but for the last two years I've been{" "}
-              <Link href={"/flights"} className="accentText">
-                travelling the world
-              </Link>{" "}
-              as a digital nomad, mostly based in Bangkok.
             </p>
             <p>
               I'm also studying law at university, run my own content writing agency and
@@ -66,6 +64,14 @@ export default function page() {
           />
           <BoxThree top="Frontend" main="React, NextJS" bottom="with TypeScript" />
         </div>
+        <p className="pt-2 text-base">
+          I consider myself a polyglot programmer - whatever language your project is
+          based on, I'll adjust and be productive quickly.
+          <br />
+          I've worked in Java, JavaScript, TypeScript, built backends with Spring and
+          NestJS, frontends with React and NextJS, Thymeleaf and plain HTML/CSS. I've also
+          worked on iOS apps with Swift and SwiftUI, and I'm currently learning Rust.
+        </p>
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
