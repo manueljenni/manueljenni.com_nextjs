@@ -31,6 +31,23 @@ footer {
   padding-bottom: .35em;
 }
 
+.accent-bg .icon-active {
+  @apply text-white
+}
+
+.accent-bg .icon-passive {
+  @apply text-neutral-800 dark:text-neutral-800
+}
+
+
+.icon-active {
+  @apply text-main dark:text-white
+}
+
+.icon-passive {
+  @apply text-neutral-800 dark:text-neutral-400
+}
+
 
 @media screen and (min-width: 768px) {
   .body {
@@ -123,10 +140,14 @@ footer {
   margin-right: auto;
 }
 
-.prose * {
+.prose p,h1,h2,h3 {
   @apply dark:text-white
 }
 
 .table-cell {
   vertical-align: baseline;
+}
+
+.rating p {
+  @apply m-0 p-0
 }
