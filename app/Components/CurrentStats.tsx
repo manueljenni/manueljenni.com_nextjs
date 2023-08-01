@@ -1,16 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
 import Utils from "../Utils";
 import BoxThree from "./BoxThree";
+import BoxThreeClock from "./BoxThreeClock";
 
 export default function CurrentStats(props: any) {
   const nextFlight = props.nextFlight;
   const currentLocation = props.currentLocation;
   const pastFlight = props.pastFlight;
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    setInterval(() => setTime(new Date()), 500);
-  }, []);
+
+  console.log(currentLocation);
 
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -42,9 +40,8 @@ export default function CurrentStats(props: any) {
             />
           </>
         )}
-        <BoxThree
+        <BoxThreeClock
           top="Manuel's current time is"
-          main={time.toLocaleTimeString() + " " + Utils.getCurrentTimeEmoji(new Date())}
           bottom={"in " + currentLocation.city}
         />
       </>

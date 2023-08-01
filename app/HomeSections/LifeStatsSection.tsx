@@ -15,7 +15,13 @@ export default async function LifeStatsSection() {
         <CurrentStats
           nextFlight={upcomingFlight[0]}
           pastFlight={pastFlight[0]}
-          currentLocation={nomadList.location.now}
+          currentLocation={
+            nomadList.location.now ?? {
+              // TODO: This is super hacky, do this properly
+              country: pastFlight[pastFlight.length - 1].arrival.countryName,
+              ...pastFlight[pastFlight.length - 1].arrival,
+            }
+          }
         />
       )}
     </div>
