@@ -93,7 +93,9 @@ async function fetchAllPastRoutes() {
 }
 
 async function fetchNomadList() {
-  const response = await fetch("https://nomadlist.com/@manueljenni.json");
+  const response = await fetch("https://nomadlist.com/@manueljenni.json", {
+    next: { revalidate: 900 },
+  });
   return await response.json();
 }
 
