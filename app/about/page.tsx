@@ -64,14 +64,6 @@ export default function page() {
           />
           <BoxThree top="Frontend" main="React, NextJS" bottom="with TypeScript" />
         </div>
-        <p className="pt-2 text-base">
-          I consider myself a polyglot programmer - whatever language your project is
-          based on, I'll adjust and be productive quickly.
-          <br />
-          I've worked in Java, JavaScript, TypeScript, built backends with Spring and
-          NestJS, frontends with React and NextJS, Thymeleaf and plain HTML/CSS. I've also
-          worked on iOS apps with Swift and SwiftUI, and I'm currently learning Rust.
-        </p>
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Career</h3>
