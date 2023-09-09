@@ -1,127 +1,98 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function SideProjects() {
   return (
-    <>
-      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
-        <div className="flex h-full flex-col justify-between space-y-3">
-          <Link href="https://freelancely.app">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <p className="text-2xl font-medium">Freelancely</p>
-                <div className="flex space-x-3 dark:text-neutral-800">
-                  <p className="rounded bg-blue-200 px-2 py-1 text-sm uppercase">Web</p>
+    <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+      <div className='boxComponent rounded-lg p-4 ring-1 ring-neutral-300'>
+        <div className='flex h-full flex-col justify-between space-y-3'>
+          <Link href='https://apps.apple.com/app/id1538561618?mt=8'>
+            <div className='space-y-3'>
+              <div className='flex items-center justify-between'>
+                <p className='text-2xl font-medium'>Mileways</p>
+                <div className='flex space-x-3 dark:text-neutral-800'>
+                  <p className='rounded bg-purple-200 px-2 py-1 text-xs'>iOS</p>
                 </div>
               </div>
               <div>
-                <p className="text-base font-medium">Bookkepping for freelancers</p>
-                <p className="text-base">
+                <p className='text-base font-medium'>All About Flights</p>
+                <p className='text-base'>
+                  Everything you need to know about your flights.
+                </p>
+              </div>
+            </div>
+          </Link>
+          <div className='flex items-center space-x-3 pt-2 text-xs uppercase dark:text-neutral-800'>
+            <p className='rounded bg-purple-200 px-2 py-1 text-purple-800'>
+              SwiftUI
+            </p>
+            <p className='rounded bg-green-200 px-2 py-1 text-green-800'>
+              Java
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className='boxComponent rounded-lg p-4 ring-1 ring-neutral-300'>
+        <div className='flex h-full flex-col justify-between space-y-3'>
+          <Link href='https://freelancely.app'>
+            <div className='space-y-3'>
+              <div className='flex items-center justify-between'>
+                <p className='text-2xl font-medium'>Freelancely</p>
+                <div className='flex space-x-3 dark:text-neutral-800'>
+                  <p className='rounded bg-blue-200 px-2 py-1 text-xs uppercase'>
+                    Web
+                  </p>
+                </div>
+              </div>
+              <div>
+                <p className='text-base font-medium'>
+                  Bookkepping for freelancers
+                </p>
+                <p className='text-base'>
                   Keep track of your billable hours, invoices & payments.
                 </p>
               </div>
             </div>
           </Link>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase dark:text-neutral-800">
-            <p className="rounded bg-blue-200 px-2 py-1 text-blue-800">NextJS</p>
-            <p className="rounded bg-purple-200 px-2 py-1 text-purple-800">NestJS</p>
+          <div className='flex items-center space-x-3 pt-2 text-xs uppercase dark:text-neutral-800'>
+            <p className='rounded bg-blue-200 px-2 py-1 text-blue-800'>
+              NextJS
+            </p>
+            <p className='rounded bg-red-200 px-2 py-1 text-red-800'>NestJS</p>
           </div>
         </div>
       </div>
-      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
-        <div className="flex h-full flex-col justify-between space-y-3">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <p className="text-2xl font-medium">Pretty New Tab</p>
-              <div className="flex space-x-3">
-                <p className="rounded bg-teal-200 px-2 py-1 text-sm uppercase dark:text-neutral-800">
-                  Extension
+      <div className='boxComponent rounded-lg p-4 ring-1 ring-neutral-300'>
+        <div className='flex h-full flex-col justify-between space-y-3'>
+          <Link href='https://flight-analysis-app.vercel.app/'>
+            <div className='space-y-3'>
+              <div className='flex items-center justify-between'>
+                <p className='text-2xl font-medium'>BusinessForLess</p>
+                <div className='flex space-x-3 dark:text-neutral-800'>
+                  <p className='rounded bg-blue-200 px-2 py-1 text-xs uppercase'>
+                    Web
+                  </p>
+                </div>
+              </div>
+              <div>
+                <p className='text-base font-medium'>
+                  Cheapest Business Class Flights
+                </p>
+                <p className='text-base'>
+                  Cheap flights for people with flexible dates & airports.
                 </p>
               </div>
             </div>
-            <div>
-              <p className="text-base font-medium">Make your new tab look pretty</p>
-              <p className="text-base">
-                Minimalist & customizable new tab extension for Chrome.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-cyan-200 px-2 py-1 text-cyan-800">React</p>
-            <p className="rounded bg-teal-200 px-2 py-1 text-teal-800">Chrome</p>
+          </Link>
+          <div className='flex items-center space-x-3 pt-2 text-xs uppercase dark:text-neutral-800'>
+            <p className='rounded bg-blue-200 px-2 py-1 text-blue-800'>
+              NextJS
+            </p>
+            <p className='rounded bg-yellow-200 px-2 py-1 text-yellow-800'>
+              Python
+            </p>
           </div>
         </div>
       </div>
-      {/*
-        <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
-        <div className="flex h-full flex-col justify-between space-y-3">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <p className="text-2xl font-medium">MyNomadTravels</p>
-              <div className="flex space-x-3">
-                <p className="rounded bg-blue-200 py-1 px-2 text-sm uppercase">Web</p>
-              </div>
-            </div>
-            <div>
-              <p className="text-base font-medium">Travel planner</p>
-              <p className="text-base">
-                Track your upcoming trips, flights & hotel stays.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-blue-200 py-1 px-2 text-blue-800">NextJS</p>
-            <p className="rounded bg-green-200 py-1 px-2 text-green-800">Spring Boot</p>
-          </div>
-        </div>
-      </div>
-      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
-        <div className="flex h-full flex-col justify-between space-y-3">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <p className="text-2xl font-medium">MyVisitedCountries</p>
-              <div className="flex space-x-3">
-                <p className="rounded bg-violet-200 py-1 px-2 text-sm">iOS</p>
-              </div>
-            </div>
-            <div>
-              <p className="text-base font-medium">Track your visited countries</p>
-              <p className="text-base">Keep track of the countries you've visited.</p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-violet-200 py-1 px-2 text-violet-800">SwiftUI</p>
-          </div>
-        </div>
-      </div>
-      <div className="boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
-        <div className="flex h-full flex-col justify-between space-y-3">
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <p className="text-2xl font-medium">FedLex Mobile</p>
-              <div className="flex space-x-3">
-                <p className="rounded bg-amber-200 py-1 px-2 text-sm">TBA</p>
-              </div>
-            </div>
-            <div>
-              <p className="text-base font-medium">All Swiss laws on mobile</p>
-              <p className="text-base">
-                A mobile version of&nbsp;
-                <Link
-                  href="https://www.fedlex.admin.ch"
-                  className="accentText"
-                  target="_blank">
-                  fedlex.admin.ch
-                </Link>
-                , built for law students.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3 pt-2 text-xs uppercase">
-            <p className="rounded bg-amber-200 py-1 px-2 text-amber-800">Prototype</p>
-          </div>
-        </div>
-      </div>
-  */}
-    </>
+    </div>
   );
 }
