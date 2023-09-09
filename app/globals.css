@@ -116,11 +116,16 @@ footer {
 }
 
 .prose h1 {
-  margin-top: .5em;
+  margin-top: 1.2em;
   margin-bottom: .5em;
 }
 
 .prose h2 {
+  margin-top: 1.2em;
+  margin-bottom: .5em;
+}
+
+.prose h3 {
   margin-top: .5em;
   margin-bottom: .5em;
 }
@@ -142,6 +147,27 @@ footer {
 
 .prose p,h1,h2,h3 {
   @apply dark:text-white
+}
+
+.prose img {
+  @apply mb-0 rounded-lg
+}
+
+.prose .imgcaption {
+  @apply text-sm text-main font-medium mt-4;
+}
+
+.prose .imgcaption p {
+  @apply pb-0 mb-0
+}
+
+.img-wrapper {
+
+}
+
+.img-wrapper + p {
+  margin-top: 0;
+  padding-bottom: 0;
 }
 
 .table-cell {

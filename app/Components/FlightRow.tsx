@@ -4,9 +4,13 @@ import useWindowDimensions from "../WindowDimensions";
 
 export default function FlightRow(props: any) {
   var flight = props.flight;
-  var { width } = { width: 1200 };
+  var { width, height, isLoading } = { width: 1200, height: 800, isLoading: true };
   if (typeof window != "undefined") {
-    var { width } = useWindowDimensions();
+    var { width, isLoading } = useWindowDimensions();
+  }
+
+  if (isLoading) {
+    return;
   }
 
   if (width > 1000) {
@@ -19,7 +23,12 @@ export default function FlightRow(props: any) {
           {Utils.parseDate(flight.departureTime)}
           <br />
           <p className="text-base text-gray-400">
-            {Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}
+            {Utils.getDepartureArrivalTime(
+              flight.departureTime,
+              flight.departure.timeZoneName,
+              flight.arrivalTime,
+              flight.arrival.timeZoneName,
+            )}
           </p>
         </div>
         <div className="table-cell whitespace-nowrap px-4 py-4 text-xl">
@@ -52,32 +61,5 @@ export default function FlightRow(props: any) {
       </div>
     );
   } else {
-    return (
-      <div
-        key={flight.departureTime + "_" + flight.departure_iata + flight.arrival_iata}
-        className="table-row odd:bg-gray-200 hover:cursor-pointer odd:dark:bg-dark-light"
-        onClick={() => window.open(flight.milewaysUrl)}>
-        <div className="table-cell px-4 py-4 text-xl">
-          <span className="text-lg text-gray-400">
-            {Utils.parseDate(flight.departureTime)}
-          </span>
-          <br />
-          <b>{flight.departure.city}</b> ({flight.departure.iata})<br />
-          <span className="text-base text-gray-400">
-            {Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}
-          </span>
-        </div>
-        <div className="table-cell px-4 py-4 text-xl">
-          <span className="text-lg text-gray-400">
-            {Utils.parseDate(flight.arrivalTime)}
-          </span>
-          <br />
-          <b>{flight.arrival.city}</b> ({flight.arrival.iata})<br />
-          <span className="text-base text-gray-400">
-            {Utils.getDepartureArrivalTime(flight.departureTime, flight.arrivalTime)}
-          </span>
-        </div>
-      </div>
-    );
   }
 }

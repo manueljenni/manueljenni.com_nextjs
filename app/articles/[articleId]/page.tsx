@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 export default async function page(props: any) {
   const article = fs.readFileSync(
     process.cwd() + `/app/articles/md/${props.params.articleId}.mdx`,
-    "utf-8"
+    "utf-8",
   );
   const { data, content } = matter(article);
   const meta = {

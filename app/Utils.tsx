@@ -44,7 +44,7 @@ function getPastDaysAsText(dateInput: number): String {
 
 function percentageOfYear(days: number, year: number) {
   const daysPassedInYear = Math.round(
-    (new Date().getTime() - new Date(year, 0, 1).getTime()) / (1000 * 3600 * 24)
+    (new Date().getTime() - new Date(year, 0, 1).getTime()) / (1000 * 3600 * 24),
   );
   const daysInYear = year == new Date().getFullYear() ? daysPassedInYear : 365;
   return Math.round((days / daysInYear) * 100);
@@ -83,7 +83,12 @@ function parseDate(input_date: string) {
   return monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
 }
 
-function getDepartureArrivalTime(start_date: string, end_date: string) {
+function getDepartureArrivalTime(
+  start_date: string,
+  departureTimeZone: string = "UTC",
+  end_date: string,
+  arrivalTimeZone: string = "UTC",
+) {
   var start = new Date(start_date);
   var end = new Date(end_date);
 
@@ -94,21 +99,28 @@ function getDepartureArrivalTime(start_date: string, end_date: string) {
     // Overnight flight
     return (
       <span>
-        {getHoursOfDateFormatted(start)} - {getHoursOfDateFormatted(end)}
+        {getHoursOfDateFormatted(start, departureTimeZone)} -{" "}
+        {getHoursOfDateFormatted(end, arrivalTimeZone)}
         <sup>+1</sup>
       </span>
     );
   } else {
-    return getHoursOfDateFormatted(start) + " - " + getHoursOfDateFormatted(end);
+    return (
+      getHoursOfDateFormatted(start, departureTimeZone) +
+      " - " +
+      getHoursOfDateFormatted(end, arrivalTimeZone)
+    );
   }
 }
 
-function getHoursOfDateFormatted(date: Date) {
-  return (
-    date.getHours().toString().padStart(2, "0") +
-    ":" +
-    date.getMinutes().toString().padStart(2, "0")
-  );
+function getHoursOfDateFormatted(date: Date, timeZone: string = "UTC") {
+  return date.toLocaleTimeString("en-US", {
+    timeZone: timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    // 24 hour format
+    hour12: false,
+  });
 }
 
 function getAge(): number {
@@ -125,7 +137,7 @@ function getDaysOfCurrentYear(): number {
   return (
     Math.floor(
       (new Date().getTime() - new Date(new Date().getFullYear(), 0, 1).getTime()) /
-        (1000 * 60 * 60 * 24)
+        (1000 * 60 * 60 * 24),
     ) + 1
   );
 }
