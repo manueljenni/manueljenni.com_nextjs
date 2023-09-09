@@ -38,7 +38,7 @@ export default function FlightRow(props: any) {
           {flight.airline.name}
           <br />
           <p className="text-base text-gray-400">
-            {flight.airline.code} {flight.flightNumber}
+            {flight.airline.iata} {flight.flightNumber}
           </p>
         </div>
         <div className="table-cell whitespace-nowrap px-4 py-4 text-lg">
