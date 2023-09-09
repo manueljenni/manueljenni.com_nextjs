@@ -4,9 +4,13 @@ import FlightRow from "./FlightRow";
 
 export default function FlightsTable(props: any) {
   var flights = props.flights;
-  var { width } = { width: 1200 };
+  var { width, isLoading } = { width: 350, isLoading: true };
   if (typeof window !== "undefined") {
-    var { width } = useWindowDimensions();
+    var { width, isLoading } = useWindowDimensions();
+  }
+
+  if (isLoading) {
+    return <p>Loading...</p>;
   }
 
   if (width > 1000) {

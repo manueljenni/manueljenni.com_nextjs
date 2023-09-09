@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import FlightsTable from "../Components/FlightsTable";
 import Map from "../Components/Map";
 import fetchData from "../fetchData";
@@ -7,21 +8,22 @@ export default async function page() {
   const upcomingRoutes = await fetchData.fetchAllUpcomingRoutes();
   const pastRoutes = await fetchData.fetchAllPastRoutes();
   var upcomingFlights = await fetchData.getUpcomingFlights();
+  console.warn("upcomingFlights", upcomingFlights);
   var pastFlights = await fetchData.getPastFlights();
 
   var thisYear = new Date().getFullYear();
   var pastThisYear = pastFlights.filter(
-    (flight: any) => new Date(flight.departureTime) > new Date(thisYear, 0, 1, 1)
+    (flight: any) => new Date(flight.departureTime) > new Date(thisYear, 0, 1, 1),
   );
   var flights2022 = pastFlights.filter(
     (flight: any) =>
       new Date(flight.departureTime) > new Date("2022-01-01") &&
-      new Date(flight.departureTime) < new Date("2023-01-01")
+      new Date(flight.departureTime) < new Date("2023-01-01"),
   );
   var flights2021 = pastFlights.filter(
     (flight: any) =>
       new Date(flight.departureTime) > new Date("2021-01-01") &&
-      new Date(flight.departureTime) < new Date("2022-01-01")
+      new Date(flight.departureTime) < new Date("2022-01-01"),
   );
 
   return (
@@ -49,7 +51,9 @@ export default async function page() {
         </div>
         <div className="space-y-4">
           <h3 className="text-xl font-medium">{thisYear}</h3>
-          <FlightsTable flights={pastThisYear} />
+          <Suspense fallback={"Loading..."}>
+            <FlightsTable flights={pastThisYear} />
+          </Suspense>
         </div>
         <div className="space-y-4">
           <h3 className="text-xl font-medium">2022</h3>

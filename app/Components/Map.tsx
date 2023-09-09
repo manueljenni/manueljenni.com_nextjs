@@ -9,8 +9,8 @@ export default function Map(props: any) {
     features: props.upcomingRoutes.map((route: any) =>
       generateGreatCircleGeoJSON(
         { x: route[0].longitude, y: route[0].latitude },
-        { x: route[1].longitude, y: route[1].latitude }
-      )
+        { x: route[1].longitude, y: route[1].latitude },
+      ),
     ),
   };
 
@@ -19,8 +19,8 @@ export default function Map(props: any) {
     features: props.pastRoutes.map((route: any) =>
       generateGreatCircleGeoJSON(
         { x: route[0].longitude, y: route[0].latitude },
-        { x: route[1].longitude, y: route[1].latitude }
-      )
+        { x: route[1].longitude, y: route[1].latitude },
+      ),
     ),
   };
 
@@ -37,16 +37,16 @@ export default function Map(props: any) {
       mapboxAccessToken="pk.eyJ1IjoibWFudWVsbm9haGplbm5pIiwiYSI6ImNrdmk2N2NhazAyajgycG52Y2l5N2p5MGYifQ.ZHY3Gijy7ldNBUzPKlA2mg"
       projection={"globe"}>
       {props.locations.map((location: any) => (
-        <div id={location.longitude + ' ' + location.latitude}>
-        <Marker
-          longitude={location.longitude}
-          latitude={location.latitude}
-          onClick={(e) => {
-            e.originalEvent.stopPropagation();
-            setPopupInfo(location);
-          }}>
-          <img src="/svg/marker-large.svg" alt="" />
-        </Marker>
+        <div id={location.longitude + " " + location.latitude}>
+          <Marker
+            longitude={location.longitude}
+            latitude={location.latitude}
+            onClick={(e) => {
+              e.originalEvent.stopPropagation();
+              setPopupInfo(location);
+            }}>
+            <img src="/svg/marker-large.svg" alt="" />
+          </Marker>
         </div>
       ))}
 

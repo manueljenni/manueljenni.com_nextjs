@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 export default async function page(props: any) {
   const article = fs.readFileSync(
     process.cwd() + `/app/articles/md/${props.params.articleId}.mdx`,
-    "utf-8"
+    "utf-8",
   );
   const { data, content } = matter(article);
   const meta = {
@@ -59,7 +59,7 @@ export default async function page(props: any) {
           <div className="centerDiv">
             <div className="flex space-x-3 text-sm text-white">
               {meta.tags.map((tag: string) => (
-                <div className="rounded-lg bg-main px-2 py-1" id={tag}>
+                <div className="rounded-lg bg-main px-2 py-1" id={tag} key={tag}>
                   <p>{"#" + tag}</p>
                 </div>
               ))}

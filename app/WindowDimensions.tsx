@@ -9,15 +9,22 @@ function getWindowDimensions() {
 }
 
 export default function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions() ?? { width: 390, height: 800 },
+  );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
     window.addEventListener("resize", handleResize);
+    setIsLoading(false);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return windowDimensions;
+  return {
+    ...windowDimensions,
+    isLoading,
+  };
 }
