@@ -1,6 +1,6 @@
 ---
 id: 4
-title:
+title: Swiss Business Class
 summary: Low expectations, but a nice surprise! Flying Swiss Business for the first time...
 tags: swiss,travel
 category: flying
@@ -76,8 +76,7 @@ The service is where the differene between Middle Eastern and Western airlines b
 
 For example, when food was served, they started walking from
 
-<PlaneTicket
-  props={{
+<planeTicket props={{
     departureAirportIata: "ZRH",
     departureAirportName: "Zurich",
     arrivalAirportIata: "SIN",
@@ -88,5 +87,4 @@ For example, when food was served, they started walking from
     seatNumber: "15K",
     duration: "12h 30m",
     distance: "6,288 mi",
-  }}
-/>
+  }} />
