@@ -85,9 +85,9 @@ function parseDate(input_date: string) {
 
 function getDepartureArrivalTime(
   start_date: string,
-  departureTimeZone: string = "UTC",
+  departureTimeZone: string,
   end_date: string,
-  arrivalTimeZone: string = "UTC",
+  arrivalTimeZone: string,
 ) {
   var start = new Date(start_date);
   var end = new Date(end_date);
