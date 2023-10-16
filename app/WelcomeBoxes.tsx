@@ -1,14 +1,14 @@
-import { faBriefcase, faNewspaper, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 export default function WelcomeBoxes() {
   return (
-    <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
       <Link href={"/about"}>
         <div className="box hover">
           <div className="centerDiv h-10 rounded-t-lg bg-main">
-            <p className="text-xl uppercase">About me</p>
+            <p className="uppercase">About me</p>
           </div>
           <div className=" centerDiv rounded-b-lg ">
             <div className="space-y-4 p-8">
@@ -22,28 +22,19 @@ export default function WelcomeBoxes() {
           </div>
         </div>
       </Link>
-      <Link href="/articles">
+      <Link href="https://www.mileways.com" target={"_blank"}>
         <div className="box hover">
           <div className="centerDiv h-10 rounded-t-lg bg-main">
-            <p className="text-xl uppercase">Articles</p>
+            <p className="uppercase">Mileways</p>
           </div>
-          <div className="rounded-b-lg">
+          <div className="centerDiv rounded-b-lg">
             <div className="space-y-4 p-8">
-              <p className="text-xl">Writing is like exercising - just for the brain.</p>
-              <FontAwesomeIcon icon={faNewspaper} className="text-2xl" />
-            </div>
-          </div>
-        </div>
-      </Link>
-      <Link href="/about">
-        <div className="box hover">
-          <div className="centerDiv h-10 rounded-t-lg bg-main">
-            <p className="text-xl uppercase">Hire me!</p>
-          </div>
-          <div className=" centerDiv rounded-b-lg">
-            <div className="space-y-4 p-8">
-              <p className="text-xl ">I'm a software developer and content writer.</p>
-              <FontAwesomeIcon icon={faBriefcase} className="text-2xl" />
+              <p className="text-lg">
+                Everything you need to know about your flights and your friends' flights.
+              </p>
+              <p className="text-sm">
+                Mileways is the flight tracking app that I'm developing.
+              </p>
             </div>
           </div>
         </div>
