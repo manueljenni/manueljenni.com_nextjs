@@ -1,4 +1,4 @@
-export default function BoxThree(props: any) {
+export default function BoxThree(props: { top: string; bottom: string; main: string }) {
   return (
     <div className="centerDiv boxComponent rounded-lg p-4 ring-1 ring-neutral-300">
       <div className="space-y-2 text-center">

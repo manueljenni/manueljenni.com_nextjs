@@ -6,7 +6,7 @@ function convertSecondsToHours(seconds: number): number {
   return Math.round(seconds / 3600);
 }
 
-function getRemainingDaysAsText(dateInput: number): String {
+function getRemainingDaysAsText(dateInput: number): string {
   var date = new Date(dateInput);
   var today = new Date();
 
@@ -17,14 +17,14 @@ function getRemainingDaysAsText(dateInput: number): String {
     return "in " + Math.round(diff / (1000 * 3600 * 24 * 365)) + " years";
   } else if (diffInDays > 30) {
     return "in " + Math.round(diff / (1000 * 3600 * 24 * 30)) + " months";
-  } else if (diffInDays == 0) {
+  } else if (diffInDays <= 0) {
     return "today";
   } else {
-    return "in " + diffInDays.toString() + " days";
+    return "in " + Math.max(diffInDays, 0) + " days";
   }
 }
 
-function getPastDaysAsText(dateInput: number): String {
+function getPastDaysAsText(dateInput: number): string {
   var date = new Date(dateInput);
   var today = new Date();
 
@@ -35,10 +35,10 @@ function getPastDaysAsText(dateInput: number): String {
     return Math.round(diff / (1000 * 3600 * 24 * 365)) + " years ago";
   } else if (diffInDays > 30) {
     return Math.round(diff / (1000 * 3600 * 24 * 30)) + " months ago";
-  } else if (diffInDays == 0) {
+  } else if (diffInDays >= 0) {
     return "today";
   } else {
-    return diffInDays.toString() + " days ago";
+    return Math.max(diffInDays, 0) + " days ago";
   }
 }
 

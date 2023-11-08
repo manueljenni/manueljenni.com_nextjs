@@ -22,6 +22,7 @@
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
     "arc": "^0.1.4",
+    "city-timezones": "^1.2.1",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "mapbox-gl": "^2.12.0",
