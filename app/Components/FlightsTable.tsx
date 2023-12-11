@@ -1,6 +1,5 @@
 "use client";
 import useWindowDimensions from "../WindowDimensions";
-import FlightRow from "./FlightRow";
 
 export default function FlightsTable(props: any) {
   var flights = props.flights;
@@ -9,6 +8,8 @@ export default function FlightsTable(props: any) {
     var { width } = useWindowDimensions();
   }
 
+  return <p>Currently unavailable</p>;
+  /*
   if (width > 1000) {
     return (
       <div className="table w-full table-fixed rounded-lg border">
@@ -48,4 +49,5 @@ export default function FlightsTable(props: any) {
       </div>
     );
   }
+  */
 }

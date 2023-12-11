@@ -26,28 +26,28 @@ export default function CurrentStats(props: any) {
                 nextFlight.arrival.iata +
                 ') ✈️'
               }
-              bottom={Utils.getRemainingDaysAsText(nextFlight.departureTime)}
+              bottom={Math.max(Utils.getRemainingDaysAsText(nextFlight.departureTime), 0)}
             />
           </>
         )) || (
-          <>
-            <BoxThree
-              top='Manuel is currently in'
-              main={currentLocation.city}
-              bottom={currentLocation.country}
-            />
-            <BoxThree
-              top='Last flight was to'
-              main={
-                pastFlight.arrival.city +
-                ' (' +
-                pastFlight.arrival.iata +
-                ') ✈️'
-              }
-              bottom={Utils.getPastDaysAsText(pastFlight.departureTime)}
-            />
-          </>
-        )}
+            <>
+              <BoxThree
+                top='Manuel is currently in'
+                main={currentLocation.city}
+                bottom={currentLocation.country}
+              />
+              <BoxThree
+                top='Last flight was to'
+                main={
+                  pastFlight.arrival.city +
+                  ' (' +
+                  pastFlight.arrival.iata +
+                  ') ✈️'
+                }
+                bottom={Utils.getPastDaysAsText(pastFlight.departureTime)}
+              />
+            </>
+          )}
         <BoxThreeClock
           top="Manuel's current time is"
           bottom={'in ' + currentLocation.city}
