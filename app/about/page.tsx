@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import BoxThree from "../Components/BoxThree";
 import BoxTwo from "../Components/BoxTwo";
 import SideProjects from "../SideProjects";
 
@@ -13,20 +12,28 @@ export default function page() {
             <p className="text-3xl font-medium">About me</p>
             <p>Hi, I'm Manuel. :)</p>
             <p>
-              Originally, I'm from Switzerland but for the last two years I've been{" "}
-              <Link href={"/flights"} className="accentText">
-                travelling the world
-              </Link>{" "}
-              as a digital nomad, mostly based in Bangkok.
+              I grew up in Switzerland, but right now I'm living in Bangkok.
+              <br />I travel a lot - check out some of my trips{" "}
+              <Link href="/travels" className="accentText">
+                here.
+              </Link>
             </p>
             <p>
-              I'm a passionate developer, working on various projects, both my own and for
-              clients.
+              I love working on startups. Right now I spend most of my time working on{" "}
+              <Link
+                href="https://www.mileways.com"
+                target={"_blank"}
+                className="accentText">
+                Mileways
+              </Link>
+              , a flight tracking app for iOS.
             </p>
-            <p>
-              I'm also studying law at university, run my own content writing agency and
-              build side projects in my free time.
-            </p>
+            <p>I also work for other startups and on other projects. Interested?</p>
+            <a
+              className="accentText"
+              href="mailto:manuelnoahjenni@gmail.com?subject=Project">
+              Contact me here.
+            </a>
           </div>
           <div className="hidden md:block">
             <Image
@@ -39,54 +46,12 @@ export default function page() {
         </div>
       </div>
       <div className="space-y-4">
-        <div className="space-y-2">
-          <h3 id="hireme" className="text-xl font-medium">
-            Full Stack Software Developer
-          </h3>
-          <p className="text-lg">
-            I'm available for freelance projects -&nbsp;
-            <a
-              className="accentText-noUnderline"
-              href="mailto:manuelnoahjenni@gmail.com?subject=Project">
-              hire me!
-            </a>
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          <BoxThree
-            top="Backend"
-            main="Java (Spring), Node (NestJS)"
-            bottom="with Postgres, Docker & Co."
-          />
-          <BoxThree top="Frontend" main="React, NextJS" bottom="with TypeScript" />
-        </div>
-      </div>
-      <div className="space-y-4">
-        <h3 className="text-xl font-medium">Career</h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          <BoxThree
-            top="Full Stack"
-            main="Software Developer"
-            bottom="Java, React, Node etc."
-          />
-          <Link
-            href="https://www.mileways.com"
-            target="_blank"
-            className="pointer-important">
-            <BoxThree
-              top="Co-founder & Developer"
-              main="Mileways"
-              bottom="Flight tracking app for iOS"
-            />
-          </Link>
-
-          {/*<BoxThree top="Studying" main="Law (LLB) ⚖️" bottom="in Switzerland" />
-          <BoxThree
-            top="ScriptySEO"
-            main="Content Writing Agency ✍️"
-            bottom="Founder & CEO"
-  />*/}
-        </div>
+        <h3 className="text-xl font-medium">Projects</h3>
+        <p className="text-lg">
+          These are some projects I'm currently working on. Some are already full-fledged
+          products, others are just ideas or prototypes.
+        </p>
+        <SideProjects />
       </div>
       <div className="space-y-4">
         <h3 className="text-xl font-medium">Hobbies</h3>
@@ -96,14 +61,6 @@ export default function page() {
           <BoxTwo main="Piano" bottom="🎹" />
           <BoxTwo main="Food ;)" bottom="🍜" />
         </div>
-      </div>
-      <div className="space-y-4">
-        <h3 className="text-xl font-medium">Projects</h3>
-        <p className="text-lg">
-          These are some projects I'm currently working on. Some are already full-fledged
-          products, others are just ideas or prototypes.
-        </p>
-        <SideProjects />
       </div>
     </div>
   );
