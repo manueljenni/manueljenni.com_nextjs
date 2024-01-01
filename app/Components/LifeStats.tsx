@@ -5,9 +5,9 @@ import CurrentStats from "./CurrentStats";
 import FlightsTable from "./FlightsTable";
 
 export default function LifeStats(props: any) {
-  var thisYear = new Date().getFullYear();
-  var lastYear = thisYear - 1;
-  var lastLastYear = thisYear - 2;
+  var thisYear = new Date().getFullYear() -1;
+  var lastYear = thisYear - 2;
+  var lastLastYear = thisYear - 3;
 
   var lifeStats = props.lifeStats;
   var currentFlightStats = lifeStats.filter(
@@ -38,7 +38,7 @@ export default function LifeStats(props: any) {
               year={thisYear}
               distance={currentFlightStats.distance}
               flightsCount={currentFlightStats.flightsCount}
-              daysAbroad={Utils.getDaysOfCurrentYear() - 19}
+              daysAbroad={238}
             />
             <YearlyStats
               year={lastYear}
