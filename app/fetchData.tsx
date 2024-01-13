@@ -99,6 +99,7 @@ async function fetchNomadList() {
   return await response.json();
 }
 
+
 export default {
   fetchArticlesSummary,
   fetchLifeStats,
