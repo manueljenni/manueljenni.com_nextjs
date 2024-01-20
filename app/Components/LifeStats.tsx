@@ -5,19 +5,23 @@ import CurrentStats from "./CurrentStats";
 import FlightsTable from "./FlightsTable";
 
 export default function LifeStats(props: any) {
-  var thisYear = new Date().getFullYear() -1;
-  var lastYear = thisYear - 2;
-  var lastLastYear = thisYear - 3;
+  var newYear = new Date().getFullYear();
+  var thisYear = new Date().getFullYear() - 1;
+  var lastYear = thisYear - 1;
+  var lastLastYear = thisYear - 2;
 
   var lifeStats = props.lifeStats;
+  var newFlightStats = lifeStats.filter(
+    (obj: any) => new Date(obj.year).getFullYear() == newYear,
+  )[0];
   var currentFlightStats = lifeStats.filter(
-    (obj: any) => new Date(obj.year).getFullYear() == thisYear
+    (obj: any) => new Date(obj.year).getFullYear() == thisYear,
   )[0];
   var pastFlightStats = lifeStats.filter(
-    (obj: any) => new Date(obj.year).getFullYear() == lastYear
+    (obj: any) => new Date(obj.year).getFullYear() == lastYear,
   )[0];
   var pastPastFlightStats = lifeStats.filter(
-    (obj: any) => new Date(obj.year).getFullYear() == lastLastYear
+    (obj: any) => new Date(obj.year).getFullYear() == lastLastYear,
   )[0];
 
   const upcomingFlights = props.upcomingFlights;
@@ -35,22 +39,28 @@ export default function LifeStats(props: any) {
           <p className="text-2xl font-medium">Travel</p>
           <div className="space-y-4">
             <YearlyStats
+              year={newYear}
+              distance={newFlightStats.distance}
+              flightsCount={newFlightStats.flightsCount}
+              countriesCount={newFlightStats.countriesCount}
+            />
+            <YearlyStats
               year={thisYear}
               distance={currentFlightStats.distance}
               flightsCount={currentFlightStats.flightsCount}
-              daysAbroad={238}
+              countriesCount={currentFlightStats.countriesCount}
             />
             <YearlyStats
               year={lastYear}
               distance={pastFlightStats.distance}
               flightsCount={pastFlightStats.flightsCount}
-              daysAbroad={215}
+              countriesCount={pastFlightStats.countriesCount}
             />
             <YearlyStats
               year={lastLastYear}
               distance={pastPastFlightStats.distance}
               flightsCount={pastPastFlightStats.flightsCount}
-              daysAbroad={94}
+              countriesCount={pastPastFlightStats.countriesCount}
             />
           </div>
         </div>
@@ -92,11 +102,9 @@ function YearlyStats(props: any) {
           bottom="flown"
         />
         <BoxThree
-          top={"In " + props.year + ", spent"}
-          main={props.daysAbroad + " days"}
-          bottom={
-            "abroad (" + Utils.percentageOfYear(props.daysAbroad, props.year) + "%)"
-          }
+          top={"In " + props.year + ", visited"}
+          main={props.countriesCount}
+          bottom={"countries"}
         />
       </div>
     </div>
