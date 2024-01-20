@@ -15,15 +15,16 @@ export default async function page() {
   var pastThisYear = pastFlights.filter(
     (flight: any) => new Date(flight.departureTime) > new Date(thisYear, 0, 1, 1),
   );
+  var flights2023 = pastFlights.filter(
+    (flight: any) =>
+      new Date(flight.departureTime) > new Date("2023-01-01") &&
+      new Date(flight.departureTime) < new Date("2024-01-01"),
+  );
+
   var flights2022 = pastFlights.filter(
     (flight: any) =>
       new Date(flight.departureTime) > new Date("2022-01-01") &&
       new Date(flight.departureTime) < new Date("2023-01-01"),
-  );
-  var flights2021 = pastFlights.filter(
-    (flight: any) =>
-      new Date(flight.departureTime) > new Date("2021-01-01") &&
-      new Date(flight.departureTime) < new Date("2022-01-01"),
   );
 
   return (
@@ -56,12 +57,12 @@ export default async function page() {
           </Suspense>
         </div>
         <div className="space-y-4">
-          <h3 className="text-xl font-medium">2022</h3>
-          <FlightsTable flights={flights2022} />
+          <h3 className="text-xl font-medium">2023</h3>
+          <FlightsTable flights={flights2023} />
         </div>
         <div className="space-y-4">
-          <h3 className="text-xl font-medium">2021</h3>
-          <FlightsTable flights={flights2021} />
+          <h3 className="text-xl font-medium">2022</h3>
+          <FlightsTable flights={flights2022} />
         </div>
       </div>
     </div>
