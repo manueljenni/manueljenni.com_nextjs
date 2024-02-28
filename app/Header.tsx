@@ -10,7 +10,7 @@ export default function Header() {
             <p className="text-2xl font-medium">Manuel Jenni</p>
           </Link>
         </div>
-        <div className="header flex items-center justify-evenly space-x-8 text-lg">
+        <div className="header flex items-center justify-evenly space-x-4 text-lg md:space-x-8">
           <Link href={"/"}>
             <p>Home</p>
           </Link>
