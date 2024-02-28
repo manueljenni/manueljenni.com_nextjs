@@ -29,7 +29,7 @@ export default function page() {
         columnClassName="my-masonry-grid_column">
         <img src="/img/nyc-feb-2024/venice-beach.JPG" alt="" />
         <img src="/img/nyc/dumbo.jpg" alt="" />
-        <img src="/img/bangkok/king-power.jpg" alt="" />
+        <img src="/img/bangkok/king-power.JPG" alt="" />
         <img src="/img/japan-2022/tokyo-1.jpg" alt="" />
         <img src="/img/japan-2022/tokyo-2.jpg" alt="" />
         <img src="/img/japan-2022/tokyo-3.jpg" alt="" />
