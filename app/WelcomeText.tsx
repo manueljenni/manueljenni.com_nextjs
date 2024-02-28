@@ -15,8 +15,8 @@ export default function WelcomeText() {
             <span className="accentText">thoughts</span>
           </Link>
           ,&nbsp;
-          <Link href="/projects">
-            <span className="accentText">projects</span>
+          <Link href="/photos">
+            <span className="accentText">photos</span>
           </Link>
           &nbsp;and&nbsp;
           <Link href="/flights">
